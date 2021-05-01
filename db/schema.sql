@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS diner_db;
+CREATE DATABASE diner_db;
