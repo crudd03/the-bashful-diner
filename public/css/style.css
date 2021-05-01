@@ -16,4 +16,35 @@ input {
 
 header {
   margin-top: 5%;
+.vertical-menu {
+  width: 200px; 
+  background-color: #46c496; 
+  color: white;
+  padding-left: 8px;
+}
+
+.vertical-menu a {
+  background-color: #eee; 
+  color: black; 
+  display: block; 
+  padding: 12px;
+  text-decoration: none; 
+}
+
+.vertical-menu a:hover {
+  background-color: rgb(155, 189, 179); 
+}
+
+.vertical-menu a.active {
+  background-color: #46c496; 
+  color: white;
+}
+
+.container {
+  font-size: 30px;
+  font-family: 'Lobster';
+}
+
+.buttonStyle:hover {
+  background-color:rgb(155, 189, 179); 
 }
