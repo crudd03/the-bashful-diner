@@ -25,52 +25,30 @@
 
   <body>
     <header>
-      <p class="text-center p-5 m-4">
+      <p class="text-center p-1 m-4">
         <span class="fa fa-fire"></span> The Bashful Diner <br />
-        User Login Page
+        Menu
       </p>
     </header>
 
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <h3 class="text-center">Please Login Below!</h3>
-        </div>
+      <div class="vertical-menu">
+        <p class="active">Menu Items</p>
+        <a href="#">Appetizers</a>
+        <a href="#">Soups/Salads</a>
+        <a href="#">Main Dishes</a>
+        <a href="#">Desserts</a>
+        <a href="#">Drinks</a>
       </div>
     </div>
 
     <div class="container">
-      <form>
-        <div class="row align-items-center text-center">
-          <div class="col-lg-12">
-            <input
-              class="col-lg-2 text-center p-2 m-1"
-              name="tableNumber"
-              id="tableNumber"
-              type="text"
-              placeholder="Username"
-            />
-            <input
-              class="col-lg-2 text-center p-2 m-1"
-              name="tableNumber"
-              id="tableNumber"
-              type="text"
-              placeholder="Password"
-            />
-            <input
-              class="col-lg-2 btn btn-info p-2 m-1"
-              type="button"
-              id="submitBtn"
-              value="Submit"
-            />
-          </div>
-        </div>
-      </form>
-    </div>
-
-    <div class="container">
       <footer class="m-4">
-        <p><a href="/api/tables">Return to Homepage</a></p>
+          <div class="row">
+            <button class="buttonStyle col order-first">Request Server</button>
+            <button class="buttonStyle col">View Cart</button>
+            <button class="buttonStyle col order-last">View Current Bill</button>
+          </div>
       </footer>
     </div>
   </body>
