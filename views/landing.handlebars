@@ -1,42 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>The Bashful Diner</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-</head>
-
-<body>
+    <header>
+        <h1 class="border-top border-4 display-1 text-center p-3">
+            <span class="fa fa-fire"></span> The Bashful Diner <br />
+        </h1>
+    </header>
 
     <div class="container">
+        <h2 class="text-center p-1">Welcome!</h2>
+        <h2 class="text-center p-2">Please enter your table number below to begin your dining experience!</h2>
 
-        <div class="jumbotron">
-            <h1 class="text-center"><span class="fa fa-fire"></span> The Bashful Diner</h1>
-            <hr>
-            <h2 class="text-center">Welcome! <br>Please enter your table number below to begin your dining experience!
-            </h2>
-            <br>
-
-            <div class="text-center">
-                <input name="tableNumber" id="tableNumber" type="text" placeholder="Table Number">
-                <input type="submit" id="submitBtn" value="Submit">
-            </div>
-
+        <div class="text-center p-2">
+            <input class="text-center p-2 m-2" name="tableNumber" id="tableNumber" type="text"
+                placeholder="Table Number">
+            <button class="buttonStyle col-lg-1 col-sm-12 order-last p-2">Submit</button>
         </div>
-
-        <footer class="footer">
-            <div class="container">
-                <p><a href="/api/tables">Employee Login</a>
-            </div>
-        </footer>
-
     </div>
 
-
-</body>
-
-</html>
+    <div class="container-fluid border-bottom border-4">
+        <footer>
+            <p><a href="/api/tables">Employee Login</a></p>
+        </footer>
+    </div>

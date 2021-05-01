@@ -16,7 +16,8 @@ input {
 
 header {
   margin-top: 5%;
-.vertical-menu {
+}
+  .vertical-menu {
   width: 200px; 
   background-color: #46c496; 
   color: white;
