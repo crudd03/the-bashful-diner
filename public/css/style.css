@@ -1,12 +1,21 @@
-header {
-  font-family: 'Lobster'; 
-  font-size: 75px;
+* {
+  font-family: 'Lobster';
 }
 
 html {
   background-image: url(https://www.xmple.com/wallpaper/blue-stripes-lines-white-streaks-3200x1800-c2-7fffd4-f5fffa-l2-136-136-a-165-f-1.svg);
 }
 
+#submitBtn {
+  background-color: rgb(96, 238, 207);
+}
+
+input {
+  background-color: rgb(219, 243, 241);
+}
+
+header {
+  margin-top: 5%;
 .vertical-menu {
   width: 200px; 
   background-color: #46c496; 
