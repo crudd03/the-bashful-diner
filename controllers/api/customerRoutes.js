@@ -1,51 +1,42 @@
-const router = require('express').Router();
-const { Order, OrderItem, Table } = require('../../models');
+const router = require("express").Router();
+const { Order, OrderItem, Table } = require("../../models");
 
-// Route for creating new Order database entry
-router.post('/', async (req, res) => {
+// Route for creating new Table database entry
+router.post("/", async (req, res) => {
   try {
-    const OrderData = await Order.create(req.body);
-    res.status(200).json(OrderData);
-
+    const tableData = await Table.create(req.body);
+    res.status(200).json(tableData);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
 // Route for table logging in
-router.post('/login', async (req, res) => {
+router.post("/login", async (req, res) => {
   try {
-    const tableData = await Table.findOne({ where: { table_id: req.body.table_id } });
+    const tableData = await Table.findOne({
+      where: { table_id: req.body.table_id },
+    });
 
     if (!tableData) {
       res
         .status(400)
-        .json({ message: 'Incorrect table or password, please try again' });
-      return;
-    }
-
-    const validPassword = await tableData.checkPassword(req.body.password);
-
-    if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect table or password, please try again' });
+        .json({ message: "Table does not exist, please try again" });
       return;
     }
 
     req.session.save(() => {
-      req.session.user_id = userData.id;
+      req.session.table_id = tableData.id;
       req.session.logged_in = true;
-      
-      res.json({ user: userData, message: 'You are now logged in!' });
-    });
 
+      res.json({ user: userData, message: "You are now logged in!" });
+    });
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-router.post('/logout', (req, res) => {
+router.post("/logout", (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();
@@ -56,53 +47,52 @@ router.post('/logout', (req, res) => {
 });
 
 // Route for adding individual items to order
-router.post('/orderitem', async (req, res) => {
+router.post("/orderitem", async (req, res) => {
   try {
     const OrderItemData = await OrderItem.create(req.body);
     res.status(200).json(OrderItemData);
-
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
 // Route for updating status of order
-router.put('/:id', async (req, res) => {
+router.put("/:id", async (req, res) => {
   try {
     const statusUpdate = await Order.update(
-    {
-      status: req.body.status
-    },
-    {
-      where: {
-        id: req.params.id,
+      {
+        status: req.body.status,
       },
-    }
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
     );
     res.status(200).json(OrderData);
-
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-// Route to delete Order table
-router.delete('/delete/:id', async (req, res) => {
+// Route for deleting orders from cart
+router.delete("/deleteitem/:id", async (req, res) => {
   try {
-    const orderData = await Order.destroy({
+    const itemData = await Order.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
       },
     });
 
-    if (!orderData) {
-      res.status(404).json({ message: 'No order found with this id!' });
+    if (!itemData) {
+      res.status(404).json({ message: "No item found with this id!" });
       return;
     }
 
-    res.status(200).json(orderData);
+    res.status(200).json(itemData);
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
+module.exports = router;
