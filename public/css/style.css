@@ -16,7 +16,8 @@ input {
 
 header {
   margin-top: 5%;
-.vertical-menu {
+}
+  .vertical-menu {
   width: 200px; 
   background-color: #46c496; 
   color: white;
@@ -47,4 +48,14 @@ header {
 
 .buttonStyle:hover {
   background-color:rgb(155, 189, 179); 
+}
+
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  width: 70%;
+  border-left: none;
+  height: 300px;
 }
