@@ -39,8 +39,8 @@ In the future we'd love to see our vision grow to include the ability to pay wit
 
 **Kelly Johnson**
 - [Github](https://github.com/KellyJohnson364)
-- [Email]()
-- [Portfolio]()
+- [Email](KJ3641402@gmail.com)
+- [Portfolio](https://kellyjohnson364.github.io/knj-portfolio-page/)
 
 **Cory Rapala**
 - [Github](https://github.com/crudd03)
