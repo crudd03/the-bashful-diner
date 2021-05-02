@@ -26,15 +26,17 @@ router.get("/menu", async (req, res) => {
   }
 });
 
-router.get("/cart", async (req, res) => {
+router.get("/tab", async (req, res) => {
   try {
-    const cartData = await Order.findAll({
+    const tabData = await Order.findAll({
       include: [
         {
           model: Menu_Item,
+          attributes: ['dish_name', 'price']
         },
         {
           model: Table,
+          attributes: ['table_number']
         },
       ],
       where: {
@@ -42,9 +44,9 @@ router.get("/cart", async (req, res) => {
       },
     });
 
-    const cartItems = cartData.map((cart) => cart.get({ plain: true }));
+    const tabItems = tabData.map((tab) => tab.get({ plain: true }));
 
-    res.render("cart", { cartItems });
+    res.render("tab", { tabItems });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -56,9 +58,11 @@ router.get("/progress", async (req, res) => {
       include: [
         {
           model: Menu_Item,
+          attributes: ['dish_name']
         },
         {
           model: Table,
+          attributes: ['table_number']
         },
       ],
       where: {
@@ -93,11 +97,16 @@ router.get("/control", async (req, res) => {
       include: [
         {
           model: Menu_Item,
+          attributes: ['dish_name']
         },
         {
           model: Table,
+          attributes: ['table_number']
         },
       ],
+      where: {
+        status: "ORDERED",
+      },
     });
 
     const controlItems = controlData.map((controlItems) =>

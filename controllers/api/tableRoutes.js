@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Order, OrderItem, Table } = require("../../models");
+const { Order, Menu_Item, Table } = require("../../models");
 
 // Route for creating new Table database entry
 router.post("/", async (req, res) => {
@@ -15,7 +15,7 @@ router.post("/", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const tableData = await Table.findOne({
-      where: { table_id: req.body.table_id },
+      where: { table_number: req.body.table_number },
     });
 
     if (!tableData) {
@@ -47,10 +47,10 @@ router.post("/logout", (req, res) => {
 });
 
 // Route for adding individual items to order
-router.post("/orderitem", async (req, res) => {
+router.post("/order", async (req, res) => {
   try {
-    const OrderItemData = await OrderItem.create(req.body);
-    res.status(200).json(OrderItemData);
+    const orderData = await Order.create(req.body);
+    res.status(200).json(orderData);
   } catch (err) {
     res.status(400).json(err);
   }
