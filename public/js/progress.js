@@ -1,0 +1,1 @@
+//when item selected from menu, it is added to cart table
