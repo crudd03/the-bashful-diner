@@ -1,27 +1,32 @@
 const sequelize = require('../config/connection');
-const seedMenu = require('./menu-seeds');
-const seedTables = require('./table-seeds');
-const seedUsers = require('./user-seeds')
+const { User, Menu_Item, Table } = require('../models');
 
 
 
+const userData = require('./userData.json');
+const menuData = require('./menuData.json');
+const tableData = require('./tableData.json');
 
 
-const seedAll = async () => {
+const seedDatabase = async () => {
   await sequelize.sync({ force: true });
-  console.log('\n----- DATABASE SYNCED -----\n');
-  await seedMenu();
-  console.log('\n----- MENU_ITEMS SEEDED -----\n');
+  const menu = await Menu_Item.bulkCreate(menuData, {
+    individualHooks: true,
+    returning: true,
+  });
 
-  await seedTables();
-  console.log('\n----- TABLES SEEDED -----\n');
-
-  await seedUsers();
-  console.log('\n----- USERS SEEDED -----\n');
-
-
+  const users = await User.bulkCreate(userData, {
+    individualHooks: true,
+    returning: true,
+  });
+ 
+  const tables = await Table.bulkCreate(tableData, {
+    individualHooks: true,
+    returning: true,
+  });
+  
 
   process.exit(0);
 };
 
-seedAll();
+seedDatabase();

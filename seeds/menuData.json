@@ -1,0 +1,66 @@
+[
+  {
+    "dish_name": "Jam and Brie Sandwich",
+    "description": "French baguette with apricote jam and warm brie",
+    "price": 10,
+    "has_nuts": false,
+    "prep_time": 600
+  },
+  {
+    "dish_name": "Cheese Plate",
+    "description":
+      "Manchego, Iberico, Cabrales, olives, grapes, pecans, and smoked almonds",
+    "price": 14,
+    "has_nuts": true,
+    "prep_time": 900
+  },
+  {
+    "dish_name": "Trout Tacos",
+    "description":
+      "Battered/fried trout, corn tortillas, cilantro, pickled red onion and spinach",
+    "price": 13,
+    "has_nuts": false,
+    "prep_time": 900
+  },
+  {
+    "dish_name": "Fruit Parfait",
+    "description": "Pineapple, mango, and strawberries with layered yogurt and granola",
+    "price": 10,
+    "has_nuts": false,
+    "prep_time": 600
+  },
+  {
+    "dish_name": "Mushroom Perogies",
+    "description":
+      "Homemade perogies stuffed with a portabella mushrpoooms and carmalized onion, served with sour cream",
+    "price": 12,
+    "has_nuts": false,
+    "prep_time": 900
+  },
+  {
+    "dish_name": "Swordfish Dinner",
+    "description":
+      "Seared swordfish with rosemary, garlic, and a side of garlic smashed potatoes",
+    "price": 20,
+    "has_nuts": false,
+    "prep_time": 1200
+  },
+  {
+    "dish_name": "Lentil Soup",
+    "description":
+      "Red lentils, onions and fresh parsley",
+    "price": 8,
+    "has_nuts": false,
+    "prep_time": 1200
+  },
+  {
+    "dish_name": "Salmon Salad",
+    "description": "Salmon filet cooked to order on top of a bed spring mix greens, onions, pecans and gorgonzola cheese",
+    "price": 17,
+    "has_nuts": true,
+    "prep_time": 1200
+  }
+]
+
+
+

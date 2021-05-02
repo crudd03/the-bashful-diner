@@ -23,7 +23,7 @@
         <h1 class="border-top border-4 display-4 text-center p-3">
             <span class="fa fa-fire"></span> The Bashful Diner
         </h1>
-        <h2 class="display-6 text-center p-2">Order Status / Progress Station</h2>
+        <h2 class="display-6 text-center p-2">Your Order</h2>
     </header>
 
     <div class="container p-3">
@@ -36,12 +36,12 @@
                     <th scope="col">Edit</th>
                 </tr>
             </thead>
+            <!-- {{ #if menu_item.length }} -->
             <tbody>
                 <tr>
-                    <th scope="row">1</th>
-                    <th>Sammich</th>
+                    <th scope="row">{{ menu_item.dish_name }}</th>
                     <th>$7.99</th>
-                    <th>Remove | Customize</th>
+                    <th> <a href="" Remove >|</a>Customize</th>
                 </tr>
             </tbody>
         </table>
@@ -54,12 +54,12 @@
                 <div class="col-lg-3 col-sm-12"></div>
                 <button class="buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2">Submit Order</button>
                 <button class="buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2">Request Server</button>
-                <button class="buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2">View Current Bill</button>
+                <button class="buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2">Menu</button>
                 <div class="col-lg-3 col-sm-12"></div>
             </div>
         </footer>
     </div>
-</body>
+    <script src="../../public/js/progress.js"></script>
 </body>
 
 </html>

@@ -26,15 +26,16 @@ Order.init(
         key: 'id',
       },
     },
-    order_note: {
-      type: Datatypes.STRING,
+    note: {
+      type: DataTypes.STRING,
       allowNull: true
     },
-    order_time: {
-      type: DataTypes.DATETIME,
-      defaultValue: Sequelize.NOW
+    status: {
+      type: DataTypes.STRING,
+      defaultValue: "ORDERED"
       
-    }
+    },
+    
   },
   {
     sequelize,
