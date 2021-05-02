@@ -95,27 +95,18 @@ router.get("/login", (req, res) => {
 
 router.get("/control", async (req, res) => {
   try {
-    const controlData = await Order.findAll({
-      include: [
-        {
-          model: Menu_Item,
-          attributes: ['dish_name']
-        },
-        {
-          model: Table,
-          attributes: ['table_number']
-        },
-      ],
+    const orderData = await Order.findAll({
+    
       where: {
         status: "ORDERED",
       },
     });
 
-    const controlItems = controlData.map((controlItems) =>
-      controlItems.get({ plain: true })
+    const orders = orderData.map((order) =>
+      order.get({ plain: true })
     );
 
-    res.render("control", { controlItems });
+    res.render("control", { orders });
   } catch (err) {
     res.status(500).json(err);
   }
