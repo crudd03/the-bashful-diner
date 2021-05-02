@@ -3,6 +3,8 @@ const { Menu_Item, Order, User, Table } = require("../models");
 
 // Customer routes
 
+
+
 router.get("/", async (req, res) => {
   if (req.session.logged_in) {
     res.redirect("/progress");

@@ -27,7 +27,7 @@ Order.init(
       },
     },
     note: {
-      type: Datatypes.STRING,
+      type: DataTypes.STRING,
       allowNull: true
     },
     status: {
@@ -35,11 +35,7 @@ Order.init(
       defaultValue: "ORDERED"
       
     },
-    time: {
-      type: DataTypes.DATETIME,
-      defaultValue: Sequelize.NOW
-      
-    }
+    
   },
   {
     sequelize,
