@@ -1,0 +1,42 @@
+ <header>
+        <h1 class="border-top border-4 display-4 text-center p-3">
+          <span class="fa fa-fire"></span> The Bashful Diner
+        </h1>
+        <h2 class="display-6 text-center p-2">Current Orders</h2>
+      </header>
+
+<!--add control section HERE-->
+        <div>
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Menu Id</th>
+                <th scope="col">Modification</th>
+                <th scope="col">Table Number</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each orders as |order| }}
+              <tr>
+                <th scope="row">{{order.id}}</th>
+                <td> <a href="/menu/{{order.menu_item_id}}">{{order.menu_item_id}}</a></td>
+                <td>{{order.note}}</td>
+                <td>{{order.table_id}}</td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>  
+        </div>
+      <div class="container-fluid border-bottom border-4">
+        <footer class="m-4">
+          <div class="row">
+            <div class="col-lg-3"></div>
+            <button class="buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2">Request Server</button>
+            <button class="buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2">View Cart</button>
+            <button class="buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2">View Current Bill</button>
+            <div class="col-lg-3"></div>
+          </div>
+        </footer>
+      </div>
+      <script src="../../public/js/control.js"></script>
