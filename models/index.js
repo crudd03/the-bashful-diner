@@ -10,7 +10,7 @@ Table.belongsToMany(Menu_Item, {
     unique: false,
   },
   // Define an alias for when data is retrieved
-  // as: 'table_orders'
+   as: 'order_item'
 });
 
 Menu_Item.belongsToMany(Table, {
@@ -20,7 +20,10 @@ Menu_Item.belongsToMany(Table, {
     unique: false,
   },
   // Define an alias for when data is retrieved
-  // as: 'item_tables'
+   as: 'item_tables'
 });
+
+
+
 
 module.exports = { Table, Menu_Item, Order, User };

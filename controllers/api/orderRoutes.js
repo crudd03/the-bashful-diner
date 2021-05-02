@@ -1,6 +1,37 @@
 const router = require('express').Router();
-const { Order } = require('../../models');
+const { Order, Menu_Item, Table } = require('../../models');
 const withAuth = require('../../utils/auth');
+
+
+router.get('/', async (req, res) => {
+  try {
+    // Get all projects and JOIN with user data
+    const orderData = await Order.findAll({
+      include: [
+        {
+          model: Menu_Item,
+          attributes: ['dish_name'],
+        },
+        {
+          model: Table,
+          attributes: ['table_number']
+        }
+      ],
+    });
+
+    // Serialize data so the template can read it
+    const orders = orderData.map((order) => order.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render('control', { 
+      orders, 
+      logged_in: req.session.logged_in 
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 router.post('/', withAuth, async (req, res) => {
   try {

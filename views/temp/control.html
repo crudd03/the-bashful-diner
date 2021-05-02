@@ -27,6 +27,27 @@
       </header>
 
 <!--add control section HERE-->
+{{#each orders as |order| }}
+<div class="row mb-4 order">
+  <div class="col-md-5">
+    <h2>
+      <a href="/order/{{order.id}}">{{order.id}}</a>
+    </h2>
+    <p>
+      <span for="img" aria-label="money">💲</span>
+      <!-- Pass needed_funding value to the helper function -->
+      <span class="dollar-amount">{{order.menu_item_id}}</span>
+      needed!
+    </p>
+    <p>Created by {{order.table_id}} on {{order.status}}</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{order.notes}}
+    </p>
+  </div>
+</div>
+{{/each}}
 
       <div class="container-fluid border-bottom border-4">
         <footer class="m-4">
