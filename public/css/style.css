@@ -62,3 +62,8 @@ header {
   padding-left: 100px;
   width: 30%;
 }
+
+.addToCart {
+  font-size: 18px;
+  background-color: rgb(97, 150, 97);
+}
