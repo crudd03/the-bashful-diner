@@ -1,6 +1,4 @@
-const { Menu_item } = require('../models');
-
-const menuData = [
+[
   {
     "dish_name": "French Bread with Brie Cheese",
     "description": "French baguette with warm brie",
@@ -54,9 +52,7 @@ const menuData = [
     "has_nuts": false,
     "prep_time": 1200
   }
-];
-const seedMenu = () => Menu_item.bulkCreate(menuData);
+]
 
-module.exports = seedMenu;
 
 
