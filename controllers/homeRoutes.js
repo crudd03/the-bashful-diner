@@ -18,11 +18,11 @@ router.get("/menu", async (req, res) => {
   try {
     const menuData = await Menu_Item.findAll();
 
-    const menuItems = menuData.map((menuItems) =>
-      menuItems.get({ plain: true })
+    const menu = menuData.map((menuItem) =>
+      menuItem.get({ plain: true })
     );
 
-    res.render("menu", { menuItems });
+    res.render("menu", { menu });
   } catch (err) {
     res.status(500).json(err);
   }

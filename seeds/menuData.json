@@ -4,6 +4,7 @@
     "description": "French baguette with apricote jam and warm brie",
     "price": 10,
     "has_nuts": false,
+    "appetizer": true,
     "prep_time": 600
   },
   {
@@ -12,6 +13,7 @@
       "Manchego, Iberico, Cabrales, olives, grapes, pecans, and smoked almonds",
     "price": 14,
     "has_nuts": true,
+    "appetizer": true,
     "prep_time": 900
   },
   {
@@ -20,6 +22,7 @@
       "Battered/fried trout, corn tortillas, cilantro, pickled red onion and spinach",
     "price": 13,
     "has_nuts": false,
+    "main": true,
     "prep_time": 900
   },
   {
@@ -27,6 +30,7 @@
     "description": "Pineapple, mango, and strawberries with layered yogurt and granola",
     "price": 10,
     "has_nuts": false,
+    "dessert": true,
     "prep_time": 600
   },
   {
@@ -35,6 +39,7 @@
       "Homemade perogies stuffed with a portabella mushrpoooms and carmalized onion, served with sour cream",
     "price": 12,
     "has_nuts": false,
+    "main": true,
     "prep_time": 900
   },
   {
@@ -43,6 +48,7 @@
       "Seared swordfish with rosemary, garlic, and a side of garlic smashed potatoes",
     "price": 20,
     "has_nuts": false,
+    "main": true,
     "prep_time": 1200
   },
   {
@@ -51,6 +57,7 @@
       "Red lentils, onions and fresh parsley",
     "price": 8,
     "has_nuts": false,
+    "soup_salad": true,
     "prep_time": 1200
   },
   {
@@ -58,6 +65,7 @@
     "description": "Salmon filet cooked to order on top of a bed spring mix greens, onions, pecans and gorgonzola cheese",
     "price": 17,
     "has_nuts": true,
+    "soup_salad": true,
     "prep_time": 1200
   }
 ]

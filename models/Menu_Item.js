@@ -29,6 +29,18 @@ Menu_Item.init(
     has_nuts: {
       type: DataTypes.BOOLEAN,
     },
+    appetizer: {
+      type: DataTypes.BOOLEAN,
+    },
+    soup_salad: {
+      type: DataTypes.BOOLEAN,
+    },
+    main: {
+      type: DataTypes.BOOLEAN,
+    },
+    dessert: {
+      type: DataTypes.BOOLEAN,
+    },
     prep_time: {
       type: DataTypes.INTEGER,
       allowNull: false, 
