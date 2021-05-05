@@ -1,0 +1,53 @@
+<header>
+    <h1 class="border-top border-4 display-4 text-center p-3">
+      <span class="fas fa-utensils"></span> The Bashful Diner
+    </h1>
+    <h2 class="display-6 text-center p-2">Thank you!</h2>
+    <h3 class="text-center p-2">Here's your bill!</h3>
+  </header>
+
+  <div class="container p-3">
+    <table class="table table-bordered text-center border border-4">
+      <thead>
+        <tr>
+          <th scope="col">Ordered Items</th>
+          <th>{{ number of items }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="col">Subtotal</th>
+          <th>{{ menu_item.price }}</th>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <th scope="col">Sales Tax</th>
+          <th>{{ subtotal plus 6% }}</th>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <th scope="col">Service Fee</th>
+          <th>{{ 18% of subtotal }}</th>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <th scope="col">Total</th>
+          <th>{{ total }}</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="container-fluid border-bottom border-4">
+    <footer class="m-4">
+      <div class="row">
+        <div class="col-lg-5"></div>
+        <button class="buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2">Request Server</button>
+        <div class="col-lg-5"></div>
+      </div>
+    </footer>
+  </div>
+  <script src="/js/bill.js"></script>
