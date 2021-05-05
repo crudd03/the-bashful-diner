@@ -1,22 +1,22 @@
-const Table = require("./Table");
+const GuestTable = require("./Table");
 const Menu_Item = require("./Menu_Item");
-const Order = require("./Order");
-const User = require("./User")
+const GuestOrder = require("./Order");
+const Staff = require("./User")
 
-Table.belongsToMany(Menu_Item, {
+GuestTable.belongsToMany(Menu_Item, {
   // Define the third table needed to store the foreign keys
   through: {
-    model: Order,
+    model: GuestOrder,
     unique: false,
   },
   // Define an alias for when data is retrieved
    as: 'order_item'
 });
 
-Menu_Item.belongsToMany(Table, {
+Menu_Item.belongsToMany(GuestTable, {
   // Define the third table needed to store the foreign keys
   through: {
-    model: Order,
+    model: GuestOrder,
     unique: false,
   },
   // Define an alias for when data is retrieved
@@ -26,4 +26,4 @@ Menu_Item.belongsToMany(Table, {
 
 
 
-module.exports = { Table, Menu_Item, Order, User };
+module.exports = { GuestTable, Menu_Item, GuestOrder, Staff };
