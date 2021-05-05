@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { User, Menu_Item, Table, Order } = require('../models');
+const { Staff, Menu_Item, GuestTable, GuestOrder } = require('../models');
 
 
 
@@ -19,12 +19,12 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  const users = await User.bulkCreate(userData, {
+  const users = await Staff.bulkCreate(userData, {
     individualHooks: true,
     returning: true,
   });
  
-  const tables = await Table.bulkCreate(tableData, {
+  const tables = await GuestTable.bulkCreate(tableData, {
     individualHooks: true,
     returning: true,
   });
@@ -41,7 +41,7 @@ const seedDatabase = async () => {
     ];
 
     // Create a new trip with random `trip_budget` and `traveller_amount` values, but with ids selected above
-    await Order.create({
+    await GuestOrder.create({
       table_id: randomTableId,
       menu_item_id: randomMenu_Item_Id,
       note: 'Here a note',
