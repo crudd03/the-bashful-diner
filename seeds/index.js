@@ -1,18 +1,11 @@
-const sequelize = require('../config/connection');
-const { Staff, Menu_Item, GuestTable, GuestOrder } = require('../models');
+const sequelize = require("../config/connection");
+const { Staff, Menu_Item, GuestTable, GuestOrder } = require("../models");
 
-
-
-const userData = require('./userData.json');
-const menuData = require('./menuData.json');
-const tableData = require('./tableData.json');
-
-
+const userData = require("./userData.json");
+const menuData = require("./menuData.json");
+const tableData = require("./tableData.json");
 
 const seedDatabase = async () => {
-
-
-  
   await sequelize.sync({ force: true });
   const menu = await Menu_Item.bulkCreate(menuData, {
     individualHooks: true,
@@ -23,13 +16,13 @@ const seedDatabase = async () => {
     individualHooks: true,
     returning: true,
   });
- 
+
   const tables = await GuestTable.bulkCreate(tableData, {
     individualHooks: true,
     returning: true,
   });
-   // Create trips at random
-   for (let i = 0; i < 10; i++) {
+  // Create trips at random
+  for (let i = 0; i < 10; i++) {
     // Get a random traveller's `id`
     const { id: randomTableId } = tables[
       Math.floor(Math.random() * tables.length)
@@ -44,15 +37,14 @@ const seedDatabase = async () => {
     await GuestOrder.create({
       table_id: randomTableId,
       menu_item_id: randomMenu_Item_Id,
-      note: 'Here a note',
-      status: 'ORDERED'
-     
+      guesttableId: randomTableId,
+      note: "Here a note",
+      status: "ORDERED",
     }).catch((err) => {
       // If there's an error, such as the same random pairing of `traveller.id` and `location.id` occurring and we get a constraint error, don't quit the Node process
       console.log(err);
     });
   }
-
 
   process.exit(0);
 };

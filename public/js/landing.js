@@ -14,7 +14,7 @@ const tableFormHandler = async (event) => {
 
     if (response.ok) {
       //  redirect the browser to the control page
-      document.location.replace("/menu");
+      // document.location.replace("/menu");
     } else {
       alert(response.statusText);
     }
