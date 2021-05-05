@@ -10,7 +10,6 @@ This application was designed for those that struggle with or would prefer to li
 * Once the order has been placed the guest will receive status updates as their order progresses.
 * The guest can add-on to the order at any time.
 * When the guest orders an additional item, they can see that it has been added to the order and the eta or the order will be adjusted.
-* When the guest searches for a specific kind of meal or dietary requirement, they are presented with a list of meals that fall under that category (i.e.; vegan, vegetarian, gluten-free, etc.)
 * If the guest needs they can request to speak to a server and the server will be notified to visit their table.
 * When the guest has finished their meal, they are able to view the bill and request to cash out.
 * When the guest is viewing the bill the sales tax, and service fee is calculated and added to the total bill.
@@ -30,7 +29,7 @@ This application was designed for those that struggle with or would prefer to li
 APIs? Heroku? Eh?
 
 ## Future Development
-In the future we'd love to see our vision grow to include the ability to pay within the application and to include multiple language options to increase accessibility. Ideally we'd like to see this application allow the user search for restaurants and be able to select from a list of establishments nearby. 
+In the future we'd love to see our vision grow to include the ability to pay within the application and to include multiple language options to increase accessibility. Ideally we'd like to see this application allow the user search for restaurants and be able to select from a list of establishments nearby. To accommedate unique dietary requirements we'd like to give the guest the ability to search for meal types/categories (i.e.; vegan, vegetarian, gluten-free, etc.).
 
 ## Collaborators
 **Lauren Wenzel**
