@@ -1,9 +1,9 @@
 const router = require("express").Router();
 const { GuestOrder, Menu_Item, GuestTable } = require("../../models");
 
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   // find all tables
-  
+
   try {
     const tableData = await GuestTable.findAll({
       include: [{ model: order }],
@@ -15,9 +15,12 @@ router.get('/', async (req, res) => {
 });
 
 // Route for creating new Table database entry
-router.post("/", async (req, res) => {
+router.post("/create", async (req, res) => {
   try {
-    const tableData = await Table.create(req.body);
+    const tableData = await Table.create({
+      table_number: req.body.table_number,
+    });
+    console.log(tableData);
     res.status(200).json(tableData);
   } catch (err) {
     res.status(400).json(err);

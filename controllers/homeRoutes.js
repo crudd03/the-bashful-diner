@@ -3,24 +3,20 @@ const { Menu_Item, GuestOrder, Staff, GuestTable } = require("../models");
 
 // Customer routes
 
-
-
 router.get("/", async (req, res) => {
   if (req.session.logged_in) {
     res.redirect("/progress");
     return;
   }
 
-  res.render("homepage");
+  res.render("landing");
 });
 
 router.get("/menu", async (req, res) => {
   try {
     const menuData = await Menu_Item.findAll();
 
-    const menu = menuData.map((menuItem) =>
-      menuItem.get({ plain: true })
-    );
+    const menu = menuData.map((menuItem) => menuItem.get({ plain: true }));
 
     res.render("menu", { menu });
   } catch (err) {
@@ -34,11 +30,11 @@ router.get("/tab", async (req, res) => {
       include: [
         {
           model: Menu_Item,
-          attributes: ['dish_name', 'price']
+          attributes: ["dish_name", "price"],
         },
         {
           model: GuestTable,
-          attributes: ['table_number']
+          attributes: ["table_number"],
         },
       ],
       where: {
@@ -60,11 +56,11 @@ router.get("/progress", async (req, res) => {
       include: [
         {
           model: Menu_Item,
-          attributes: ['dish_name']
+          attributes: ["dish_name"],
         },
         {
           model: GuestTable,
-          attributes: ['table_number']
+          attributes: ["table_number"],
         },
       ],
       where: {
@@ -96,16 +92,21 @@ router.get("/login", (req, res) => {
 router.get("/control", async (req, res) => {
   try {
     const orderData = await GuestOrder.findAll({
-    
+      include: [
+        {
+          model: Menu_Item,
+        },
+        {
+          model: GuestTable,
+        },
+      ],
       where: {
         status: "ORDERED",
       },
     });
 
-    const orders = orderData.map((order) =>
-      order.get({ plain: true })
-    );
-
+    const orders = orderData.map((order) => order.get({ plain: true }));
+    console.log(orders);
     res.render("control", { orders });
   } catch (err) {
     res.status(500).json(err);
