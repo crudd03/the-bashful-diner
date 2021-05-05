@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Menu_Item, GuestOrder, User, Table } = require("../models");
+const { Menu_Item, GuestOrder, Staff, GuestTable } = require("../models");
 
 // Customer routes
 
@@ -26,14 +26,14 @@ router.get("/menu", async (req, res) => {
 
 router.get("/tab", async (req, res) => {
   try {
-    const tabData = await Order.findAll({
+    const tabData = await GuestOrder.findAll({
       include: [
         {
           model: Menu_Item,
           attributes: ["dish_name", "price"],
         },
         {
-          model: Table,
+          model: GuestTable,
           attributes: ["table_number"],
         },
       ],
@@ -52,14 +52,14 @@ router.get("/tab", async (req, res) => {
 
 router.get("/progress", async (req, res) => {
   try {
-    const progressData = await Order.findAll({
+    const progressData = await GuestOrder.findAll({
       include: [
         {
           model: Menu_Item,
           attributes: ["dish_name"],
         },
         {
-          model: Table,
+          model: GuestTable,
           attributes: ["table_number"],
         },
       ],
