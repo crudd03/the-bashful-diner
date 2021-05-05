@@ -1,7 +1,7 @@
-const GuestTable = require("./Table");
+const GuestTable = require("./GuestTable");
 const Menu_Item = require("./Menu_Item");
-const GuestOrder = require("./Order");
-const Staff = require("./User")
+const GuestOrder = require("./GuestOrder");
+const Staff = require("./Staff")
 
 GuestTable.belongsToMany(Menu_Item, {
   // Define the third table needed to store the foreign keys

@@ -1,11 +1,11 @@
 const router = require("express").Router();
-const { Order, Menu_Item, Table } = require("../../models");
+const { GuestOrder, Menu_Item, GuestTable } = require("../../models");
 
 router.get('/', async (req, res) => {
   // find all tables
   
   try {
-    const tableData = await Table.findAll({
+    const tableData = await GuestTable.findAll({
       include: [{ model: order }],
     });
     res.status(200).json(tableData);
@@ -27,7 +27,7 @@ router.post("/", async (req, res) => {
 // Route for table logging in
 router.post("/login", async (req, res) => {
   try {
-    const tableData = await Table.findOne({
+    const tableData = await GuestTable.findOne({
       where: { table_number: req.body.table_number },
     });
 
@@ -62,7 +62,7 @@ router.post("/logout", (req, res) => {
 // Route for adding individual items to order
 router.post("/order", async (req, res) => {
   try {
-    const orderData = await Order.create(req.body);
+    const orderData = await GuestOrder.create(req.body);
     res.status(200).json(orderData);
   } catch (err) {
     res.status(400).json(err);
@@ -72,7 +72,7 @@ router.post("/order", async (req, res) => {
 // Route for updating status of order
 router.put("/:id", async (req, res) => {
   try {
-    const statusUpdate = await Order.update(
+    const statusUpdate = await GuestOrder.update(
       {
         status: req.body.status,
       },
@@ -91,7 +91,7 @@ router.put("/:id", async (req, res) => {
 // Route for deleting orders from cart
 router.delete("/deleteitem/:id", async (req, res) => {
   try {
-    const itemData = await Order.destroy({
+    const itemData = await GuestOrder.destroy({
       where: {
         id: req.params.id,
       },

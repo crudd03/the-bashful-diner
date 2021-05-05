@@ -1,19 +1,19 @@
 const router = require('express').Router();
-const { Order, Menu_Item, Table } = require('../../models');
+const { GuestOrder, Menu_Item, GuestTable } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
-    const orderData = await Order.findAll({
+    const orderData = await GuestOrder.findAll({
       include: [
         {
           model: Menu_Item,
           attributes: ['dish_name'],
         },
         {
-          model: Table,
+          model: GuestTable,
           attributes: ['table_number']
         }
       ],
@@ -35,7 +35,7 @@ router.get('/', async (req, res) => {
 
 router.post('/', withAuth, async (req, res) => {
   try {
-    const newOrder = await Order.create({
+    const newOrder = await GuestOrder.create({
       ...req.body,
       user_id: req.session.user_id,
     });
@@ -49,7 +49,7 @@ router.post('/', withAuth, async (req, res) => {
 // Route for updating status of order
 router.put("/:id", async (req, res) => {
   try {
-    const statusUpdate = await Order.update(
+    const statusUpdate = await GuestOrder.update(
       {
         status: req.body.status,
       },
