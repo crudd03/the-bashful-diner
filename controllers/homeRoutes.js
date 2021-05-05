@@ -1,9 +1,7 @@
 const router = require("express").Router();
-const { Menu_Item, Order, User, Table } = require("../models");
+const { Menu_Item, GuestOrder, User, Table } = require("../models");
 
 // Customer routes
-
-
 
 router.get("/", async (req, res) => {
   if (req.session.logged_in) {
@@ -18,9 +16,7 @@ router.get("/menu", async (req, res) => {
   try {
     const menuData = await Menu_Item.findAll();
 
-    const menu = menuData.map((menuItem) =>
-      menuItem.get({ plain: true })
-    );
+    const menu = menuData.map((menuItem) => menuItem.get({ plain: true }));
 
     res.render("menu", { menu });
   } catch (err) {
@@ -34,11 +30,11 @@ router.get("/tab", async (req, res) => {
       include: [
         {
           model: Menu_Item,
-          attributes: ['dish_name', 'price']
+          attributes: ["dish_name", "price"],
         },
         {
           model: Table,
-          attributes: ['table_number']
+          attributes: ["table_number"],
         },
       ],
       where: {
@@ -60,11 +56,11 @@ router.get("/progress", async (req, res) => {
       include: [
         {
           model: Menu_Item,
-          attributes: ['dish_name']
+          attributes: ["dish_name"],
         },
         {
           model: Table,
-          attributes: ['table_number']
+          attributes: ["table_number"],
         },
       ],
       where: {
@@ -95,16 +91,13 @@ router.get("/login", (req, res) => {
 
 router.get("/control", async (req, res) => {
   try {
-    const orderData = await Order.findAll({
-    
+    const orderData = await GuestOrder.findAll({
       where: {
         status: "ORDERED",
       },
     });
 
-    const orders = orderData.map((order) =>
-      order.get({ plain: true })
-    );
+    const orders = orderData.map((order) => order.get({ plain: true }));
 
     res.render("control", { orders });
   } catch (err) {
