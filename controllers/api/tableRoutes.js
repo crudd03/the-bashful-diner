@@ -28,7 +28,9 @@ router.post("/create", async (req, res) => {
       req.session.logged_in = true;
       res.json({ guesttable: tableData });
     });
-    console.log(req.session.table_id);
+    req.session.table_id = tableData.id;
+    req.session.logged_in = true;
+    console.log(req.session);
     res.status(200).json(tableData);
   } catch (err) {
     res.status(400).json(err);
