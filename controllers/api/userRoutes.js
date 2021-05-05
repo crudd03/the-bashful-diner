@@ -4,7 +4,7 @@ const { Staff } = require("../../models");
 router.post("/login", async (req, res) => {
   try {
     const userData = await Staff.findOne({
-      where: { user_id: req.body.user_id },
+      where: { username: req.body.userName },
     });
 
     if (!userData) {
