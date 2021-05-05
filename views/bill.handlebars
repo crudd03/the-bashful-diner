@@ -7,35 +7,39 @@
   </header>
 
   <div class="container p-3">
-    <table class="table table-bordered text-center border border-4">
+    <table class="align-middle table table-bordered text-center border border-4">
       <thead>
         <tr>
           <th scope="col">Ordered Items</th>
-          <th>{{ number of items }}</th>
+          <th>
+          {{#each billItems as |billItem| }} 
+          {{ billItem.menu_item.dish_name }}......... ${{ billItem.menu_item.price }} <br>
+          {{/each}}
+          </th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <th scope="col">Subtotal</th>
-          <th>{{ menu_item.price }}</th>
+          <th> menu_item.price </th>
         </tr>
       </tbody>
       <tbody>
         <tr>
           <th scope="col">Sales Tax</th>
-          <th>{{ subtotal plus 6% }}</th>
+          <th> subtotal plus 6% </th>
         </tr>
       </tbody>
       <tbody>
         <tr>
           <th scope="col">Service Fee</th>
-          <th>{{ 18% of subtotal }}</th>
+          <th> 18% of subtotal </th>
         </tr>
       </tbody>
       <tbody>
         <tr>
           <th scope="col">Total</th>
-          <th>{{ total }}</th>
+          <th> total </th>
         </tr>
       </tbody>
     </table>

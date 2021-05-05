@@ -15,10 +15,10 @@
                 </tr>
             </thead>
             <tbody>
-            {{#each menu_items as | menu_item }}
+            {{#each cartItems as |cartItem| }}
                 <tr>
-                    <th scope="row">{{ menu_item.dish_name }}</th>
-                    <th>{{ menu_item.price }}</th>
+                    <th scope="row">{{ cartItem.menu_item.dish_name }}</th>
+                    <th>${{ cartItem.menu_item.price }}</th>
                     <th><button class="buttonStyle text-center p-1 m-1">Remove</button><button class="buttonStyle text-center p-1 m-1">Customize</button></th>
                 </tr>
                 {{/each}}
