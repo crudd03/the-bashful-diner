@@ -35,8 +35,8 @@ In the future we'd love to see our vision grow to include the ability to pay wit
 ## Collaborators
 **Lauren Wenzel**
 - [Github](https://github.com/Laurenzel93)
-- [Email]()
-- [Portfolio]()
+- [Email](lwenzelwebdev@gmail.com)
+- [Portfolio](https://laurenzel93.github.io/my-portfolio/)
 
 **Kelly Johnson**
 - [Github](https://github.com/KellyJohnson364)
