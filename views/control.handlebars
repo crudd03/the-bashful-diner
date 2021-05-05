@@ -19,7 +19,7 @@
         {{#each orders as |order| }}
         <tr>
           <th scope="row">{{order.id}}</th>
-          <td> <a href="/menu/{{order.menu_item_id}}">{{order.menu_item_id}}</a></td>
+          <td> <a href="/menu/{{order.menu_item_id}}">{{order.menu_item.dish_name}}</a></td>
           <td>{{order.note}}</td>
           <td>{{order.table_id}}</td>
         </tr>
@@ -37,4 +37,4 @@
       </div>
     </footer>
   </div>
-  <script src="../public/js/control.js"></script>
+  <script src="/js/control.js"></script>

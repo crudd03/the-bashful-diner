@@ -26,13 +26,6 @@ GuestOrder.init(
         key: "id",
       },
     },
-    order_dish_name: {
-      type: DataTypes.STRING,
-      references: {
-        model: "menu_item",
-        key: "dish_name",
-      },
-    },
     note: {
       type: DataTypes.STRING,
       allowNull: true,

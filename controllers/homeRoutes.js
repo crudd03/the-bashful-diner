@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
     return;
   }
 
-  res.render("homepage");
+  res.render("landing");
 });
 
 router.get("/menu", async (req, res) => {
@@ -92,13 +92,21 @@ router.get("/login", (req, res) => {
 router.get("/control", async (req, res) => {
   try {
     const orderData = await GuestOrder.findAll({
+      include: [
+        {
+          model: Menu_Item,
+        },
+        {
+          model: GuestTable,
+        },
+      ],
       where: {
         status: "ORDERED",
       },
     });
 
     const orders = orderData.map((order) => order.get({ plain: true }));
-
+    console.log(orders);
     res.render("control", { orders });
   } catch (err) {
     res.status(500).json(err);
