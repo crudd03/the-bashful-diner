@@ -17,7 +17,7 @@ const loginFormHandler = async (event) => {
       //  redirect the browser to the control page
       document.location.replace("/control");
     } else {
-      alert(response.statusText);
+      alert(response);
     }
   }
 };

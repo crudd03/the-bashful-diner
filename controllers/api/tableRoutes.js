@@ -17,10 +17,18 @@ router.get("/", async (req, res) => {
 // Route for creating new Table database entry
 router.post("/create", async (req, res) => {
   try {
-    const tableData = await Table.create({
+    // const tableParse = JSON.parse(req.body);
+    const tableData = await GuestTable.create({
       table_number: req.body.table_number,
     });
     console.log(tableData);
+
+    req.session.save(() => {
+      req.session.table_id = tableData.id;
+      req.session.logged_in = true;
+      res.json({ guesttable: tableData });
+    });
+    console.log(req.session.table_id);
     res.status(200).json(tableData);
   } catch (err) {
     res.status(400).json(err);
@@ -28,29 +36,29 @@ router.post("/create", async (req, res) => {
 });
 
 // Route for table logging in
-router.post("/login", async (req, res) => {
-  try {
-    const tableData = await GuestTable.findOne({
-      where: { table_number: req.body.table_number },
-    });
+// router.post("/login", async (req, res) => {
+//   try {
+//     const tableData = await GuestTable.findOne({
+//       where: { table_number: req.body.table_number },
+//     });
 
-    if (!tableData) {
-      res
-        .status(400)
-        .json({ message: "Table does not exist, please try again" });
-      return;
-    }
+//     if (!tableData) {
+//       res
+//         .status(400)
+//         .json({ message: "Table does not exist, please try again" });
+//       return;
+//     }
 
-    req.session.save(() => {
-      req.session.table_id = tableData.id;
-      req.session.logged_in = true;
+//     req.session.save(() => {
+//       req.session.table_id = tableData.id;
+//       req.session.logged_in = true;
 
-      res.json({ user: userData, message: "You are now logged in!" });
-    });
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
+//       res.json({ user: userData, message: "You are now logged in!" });
+//     });
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
 
 router.post("/logout", (req, res) => {
   if (req.session.logged_in) {

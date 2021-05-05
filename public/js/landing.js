@@ -2,7 +2,9 @@ const tableFormHandler = async (event) => {
   event.preventDefault();
 
   // get info from form
-  const table_number = document.querySelector("#tableNumber").value.trim();
+  const table_number = parseInt(
+    document.querySelector("#tableNumber").value.trim()
+  );
 
   if (table_number) {
     // Send a POST request server
@@ -14,9 +16,9 @@ const tableFormHandler = async (event) => {
 
     if (response.ok) {
       //  redirect the browser to the control page
-      // document.location.replace("/menu");
+      document.location.replace("/menu");
     } else {
-      alert(response.statusText);
+      alert(JSON.stringify(response));
     }
   }
 };
