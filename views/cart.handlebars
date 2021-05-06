@@ -19,7 +19,7 @@
                 <tr>
                     <th scope="row">{{ cartItem.menu_item.dish_name }}</th>
                     <th>${{ cartItem.menu_item.price }}</th>
-                    <th><button class="buttonStyle text-center p-1 m-1">Remove</button><button class="buttonStyle text-center p-1 m-1">Customize</button></th>
+                    <th><button data-id="{{cartItem.id}}" class="remove buttonStyle text-center p-1 m-1">Remove</button><button class="buttonStyle text-center p-1 m-1">Customize</button></th>
                 </tr>
                 {{/each}}
             </tbody>
@@ -30,7 +30,7 @@
         <footer class="m-4">
             <div class="row">
                 <div class="col-lg-3 col-sm-12"></div>
-                <button class="buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2">Submit Order</button>
+                <button id="submitOrder" class="buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2">Submit Order</button>
                 <button class="buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2">Request Server</button>
                 <button class="buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2">Menu</button>
                 <div class="col-lg-3 col-sm-12"></div>

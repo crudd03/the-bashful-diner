@@ -89,30 +89,32 @@ router.post("/order", async (req, res) => {
 });
 
 // Route for updating status of order
-router.put("/:id", async (req, res) => {
+router.put("/update", async (req, res) => {
   try {
     const statusUpdate = await GuestOrder.update(
       {
-        status: req.body.status,
+        status: "ORDERED",
       },
       {
         where: {
-          id: req.params.id,
+          table_id: req.session.table_id,
         },
       }
     );
-    res.status(200).json(OrderData);
+    console.log(req.session.table_id);
+    console.log(statusUpdate);
+    res.status(200).json(statusUpdate);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
 // Route for deleting orders from cart
-router.delete("/deleteitem/:id", async (req, res) => {
+router.delete("/delete", async (req, res) => {
   try {
     const itemData = await GuestOrder.destroy({
       where: {
-        id: req.params.id,
+        id: req.body.id,
       },
     });
 
