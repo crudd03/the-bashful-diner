@@ -64,6 +64,7 @@ router.get("/cart", async (req, res) => {
       ],
       where: {
         table_id: req.session.table_id,
+        status: "PENDING",
         // table_id: 2,
       },
     });
