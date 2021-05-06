@@ -5,7 +5,7 @@ const { Menu_Item, GuestOrder, Staff, GuestTable } = require("../models");
 
 router.get("/", async (req, res) => {
   if (req.session.logged_in) {
-    res.redirect("/progress");
+    res.redirect("/cart");
     return;
   }
 
@@ -57,22 +57,18 @@ router.get("/cart", async (req, res) => {
       include: [
         {
           model: Menu_Item,
-          attributes: ["dish_name", "price"],
         },
         {
           model: GuestTable,
-          attributes: ["table_number"],
         },
       ],
       where: {
-        // table_id: req.session.table_id,
-        table_id: 2,
+        table_id: req.session.table_id,
+        // table_id: 2,
       },
     });
 
-    const cartItems = cartData.map((cart) =>
-      cart.get({ plain: true })
-    );
+    const cartItems = cartData.map((cart) => cart.get({ plain: true }));
 
     res.render("cart", { cartItems });
   } catch (err) {

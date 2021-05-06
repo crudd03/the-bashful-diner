@@ -19,7 +19,7 @@
     <h2>Appetizers</h2>
     {{#each menu as |menuItem| }}
     {{#if menuItem.appetizer}}
-    <li>{{menuItem.dish_name}}.................................${{menuItem.price}} <button class="addToCart">Add to Cart</button></li>
+    <li>{{menuItem.dish_name}}.................................${{menuItem.price}} <button data-id= "{{menuItem.id}}" class="addToCart">Add to Cart</button></li>
     <p class="description">{{menuItem.description}}</p>
     {{/if}}
     {{/each}}
@@ -29,7 +29,7 @@
     <h2>Soups/Salads</h2>
     {{#each menu as |menuItem| }}
     {{#if menuItem.soup_salad}}
-    <li>{{menuItem.dish_name}}.................................${{menuItem.price}} <button class="addToCart">Add to Cart</button></li>
+    <li>{{menuItem.dish_name}}.................................${{menuItem.price}} <button data-id= "{{menuItem.id}}" class="addToCart">Add to Cart</button></li>
     <p class="description">{{menuItem.description}}</p>
     {{/if}}
     {{/each}}
@@ -39,7 +39,7 @@
     <h2>Main Dishes</h2>
    {{#each menu as |menuItem| }}
     {{#if menuItem.main}}
-    <li>{{menuItem.dish_name}}.................................${{menuItem.price}} <button class="addToCart">Add to Cart</button></li>
+    <li>{{menuItem.dish_name}}.................................${{menuItem.price}} <button data-id= "{{menuItem.id}}" class="addToCart">Add to Cart</button></li>
     <p class="description">{{menuItem.description}}</p>
     {{/if}}
     {{/each}}
@@ -49,7 +49,7 @@
     <h2>Desserts</h2>
     {{#each menu as |menuItem| }}
     {{#if menuItem.dessert}}
-    <li>{{menuItem.dish_name}}.................................${{menuItem.price}} <button class="addToCart">Add to Cart</button></li>
+    <li>{{menuItem.dish_name}}.................................${{menuItem.price}} <button data-id= "{{menuItem.id}}" class="addToCart">Add to Cart</button></li>
     <p class="description">{{menuItem.description}}</p>
     {{/if}}
     {{/each}}
