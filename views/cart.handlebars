@@ -20,7 +20,7 @@
                 <th scope="row">{{ cartItem.menu_item.dish_name }}</th>
                 <th>${{ cartItem.menu_item.price }}</th>
                 <th><button data-id="{{cartItem.id}}" class="remove buttonStyle text-center p-1 m-1">Remove</button><button
-                        class="buttonStyle text-center p-1 m-1">Customize</button></th>
+                        data-id="{{cartItem.id}}" class="customize buttonStyle text-center p-1 m-1">Customize</button></th>
             </tr>
             {{/each}}
         </tbody>
