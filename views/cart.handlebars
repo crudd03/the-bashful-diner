@@ -1,40 +1,43 @@
-    <header>
-        <h1 class="border-top border-4 display-4 text-center p-3">
-            <span class="fas fa-utensils"></span> The Bashful Diner
-        </h1>
-        <h2 class="display-6 text-center p-2">Your Order</h2>
-    </header>
+<header>
+    <h1 class="border-top border-4 display-4 text-center p-3">
+        <span class="fas fa-utensils"></span> The Bashful Diner
+    </h1>
+    <h2 class="display-6 text-center p-2">Your Order</h2>
+</header>
 
-    <div class="container p-3">
-        <table class="align-middle table table-bordered text-center table-hover border border-4">
-            <thead>
-                <tr>
-                    <th scope="col">Food Item</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Edit</th>
-                </tr>
-            </thead>
-            <tbody>
+<div class="container p-3">
+    <table class="align-middle table table-bordered text-center table-hover border border-4">
+        <thead>
+            <tr>
+                <th scope="col">Food Item</th>
+                <th scope="col">Price</th>
+                <th scope="col">Edit</th>
+            </tr>
+        </thead>
+        <tbody>
             {{#each cartItems as |cartItem| }}
-                <tr>
-                    <th scope="row">{{ cartItem.menu_item.dish_name }}</th>
-                    <th>${{ cartItem.menu_item.price }}</th>
-                    <th><button data-id="{{cartItem.id}}" class="remove buttonStyle text-center p-1 m-1">Remove</button><button class="buttonStyle text-center p-1 m-1">Customize</button></th>
-                </tr>
-                {{/each}}
-            </tbody>
-        </table>
-    </div>
+            <tr>
+                <th scope="row">{{ cartItem.menu_item.dish_name }}</th>
+                <th>${{ cartItem.menu_item.price }}</th>
+                <th><button data-id="{{cartItem.id}}" class="remove buttonStyle text-center p-1 m-1">Remove</button><button
+                        class="buttonStyle text-center p-1 m-1">Customize</button></th>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
 
-    <div class="container-fluid border-bottom border-4">
-        <footer class="m-4">
-            <div class="row">
-                <div class="col-lg-3 col-sm-12"></div>
-                <button id="submitOrder" class="buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2">Submit Order</button>
-                <button class="buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2">Request Server</button>
-                <button class="buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2">Menu</button>
-                <div class="col-lg-3 col-sm-12"></div>
-            </div>
-        </footer>
-    </div>
-    <script src="/js/cart.js"></script>
+<div class="container-fluid border-bottom border-4">
+    <footer class="m-4">
+        <div class="row">
+            <div class="col-lg-3 col-sm-12"></div>
+            <button id="submitOrder" class="linkStyle buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2">Submit Order</button>
+            <button class="linkStyle buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2">Request Server</button>
+            <button class="buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2">
+                <a class="linkStyle" href="/menu">Menu</a>
+            </button>
+            <div class="col-lg-3 col-sm-12"></div>
+        </div>
+    </footer>
+</div>
+<script src="/js/cart.js"></script>
