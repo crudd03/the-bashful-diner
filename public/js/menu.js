@@ -14,3 +14,6 @@ function openMenu(evt, menuItem) {
     document.getElementById(menuItem).style.display = "block";
     evt.currentTarget.className += " active";
   }
+
+  //event listeners for... 
+  //view cart and view bill

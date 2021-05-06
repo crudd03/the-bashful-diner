@@ -24,9 +24,9 @@ router.get("/menu", async (req, res) => {
   }
 });
 
-router.get("/tab", async (req, res) => {
+router.get("/bill", async (req, res) => {
   try {
-    const tabData = await GuestOrder.findAll({
+    const billData = await GuestOrder.findAll({
       include: [
         {
           model: Menu_Item,
@@ -38,25 +38,26 @@ router.get("/tab", async (req, res) => {
         },
       ],
       where: {
-        table_id: req.session.table_id,
+        // table_id: req.session.table_id,
+        table_id: 2,
       },
     });
 
-    const tabItems = tabData.map((tab) => tab.get({ plain: true }));
+    const billItems = billData.map((bill) => bill.get({ plain: true }));
 
-    res.render("tab", { tabItems });
+    res.render("bill", { billItems });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get("/progress", async (req, res) => {
+router.get("/cart", async (req, res) => {
   try {
-    const progressData = await GuestOrder.findAll({
+    const cartData = await GuestOrder.findAll({
       include: [
         {
           model: Menu_Item,
-          attributes: ["dish_name"],
+          attributes: ["dish_name", "price"],
         },
         {
           model: GuestTable,
@@ -64,15 +65,16 @@ router.get("/progress", async (req, res) => {
         },
       ],
       where: {
-        table_id: req.session.table_id,
+        // table_id: req.session.table_id,
+        table_id: 2,
       },
     });
 
-    const progressItems = progressData.map((progress) =>
-      progress.get({ plain: true })
+    const cartItems = cartData.map((cart) =>
+      cart.get({ plain: true })
     );
 
-    res.render("progress", { progressItems });
+    res.render("cart", { cartItems });
   } catch (err) {
     res.status(500).json(err);
   }
