@@ -32,7 +32,7 @@ GuestOrder.init(
     },
     status: {
       type: DataTypes.STRING,
-      defaultValue: "ORDERED",
+      defaultValue: "PENDING",
     },
   },
   {
