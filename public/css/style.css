@@ -45,7 +45,7 @@ header {
 
 
 .buttonStyle:hover {
-  background-color:rgb(155, 189, 179); 
+  background-color:rgb(155, 189, 179);
 }
 
 .tabcontent {
@@ -71,6 +71,13 @@ header {
 .description {
   font-size: 16px;
 }
+
+.linkStyle {
+  color:black;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px #46c496;
+}
+
 
 /* .has-nuts {
   font-family: 'Exo 2', sans-serif;
