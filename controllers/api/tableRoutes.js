@@ -75,7 +75,13 @@ router.post("/logout", (req, res) => {
 // Route for adding individual items to order
 router.post("/order", async (req, res) => {
   try {
-    const orderData = await GuestOrder.create(req.body);
+    const orderData = await GuestOrder.create({
+      menu_item_id: req.body.menu_item_id,
+      menuItemId: req.body.menu_item_id,
+      table_id: req.session.table_id,
+      guesttableId: req.session.table_id,
+    });
+    console.log(orderData);
     res.status(200).json(orderData);
   } catch (err) {
     res.status(400).json(err);

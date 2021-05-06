@@ -57,16 +57,14 @@ router.get("/cart", async (req, res) => {
       include: [
         {
           model: Menu_Item,
-          attributes: ["dish_name", "price"],
         },
         {
           model: GuestTable,
-          attributes: ["table_number"],
         },
       ],
       where: {
-        // table_id: req.session.table_id,
-        table_id: 2,
+        table_id: req.session.table_id,
+        // table_id: 2,
       },
     });
 
