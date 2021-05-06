@@ -1,22 +1,20 @@
 module.exports = {
-  format_date: (date) => {
-    // Format date as MM/DD/YYYY
-    return date.toLocaleDateString();
-  },
-  format_amount: (amount) => {
-    // format large numbers with commas
-    return parseInt(amount).toLocaleString();
-  },
-  get_emoji: () => {
-    const randomNum = Math.random();
+  
+  getSub:  (billItems) => {
+    var total = billItems.reduce(function (a, b) { return a + b.menu_item.price; }, 0);
+    return total;
+},   
 
-    // Return a random emoji
-    if (randomNum > 0.7) {
-      return `<span for="img" aria-label="lightbulb">💡</span>`;
-    } else if (randomNum > 0.4) {
-      return `<span for="img" aria-label="laptop">💻</span>`;
-    } else {
-      return `<span for="img" aria-label="gear">⚙️</span>`;
-    }
-  },
+  getTax:  (billItems) => {
+  var total = billItems.reduce(function (a, b) { return a + b.menu_item.price; }, 0);
+  return total * .06;
+},
+  getTip:  (billItems) => {
+  var total = billItems.reduce(function (a, b) { return a + b.menu_item.price; }, 0);
+  return total * .18;
+}, 
+getTotal:  (billItems) => {
+  var total = billItems.reduce(function (a, b) { return a + b.menu_item.price; }, 0);
+  return total + (total * .18) + (total * .06);
+},       
 };
