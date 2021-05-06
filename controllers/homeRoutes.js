@@ -5,7 +5,7 @@ const { Menu_Item, GuestOrder, Staff, GuestTable } = require("../models");
 
 router.get("/", async (req, res) => {
   if (req.session.logged_in) {
-    res.redirect("/progress");
+    res.redirect("/cart");
     return;
   }
 
@@ -50,7 +50,7 @@ router.get("/tab", async (req, res) => {
   }
 });
 
-router.get("/progress", async (req, res) => {
+router.get("/cart", async (req, res) => {
   try {
     const progressData = await GuestOrder.findAll({
       include: [
@@ -72,7 +72,7 @@ router.get("/progress", async (req, res) => {
       progress.get({ plain: true })
     );
 
-    res.render("progress", { progressItems });
+    res.render("cart", { progressItems });
   } catch (err) {
     res.status(500).json(err);
   }
