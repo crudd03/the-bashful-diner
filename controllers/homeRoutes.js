@@ -104,9 +104,17 @@ router.get("/control", async (req, res) => {
       },
     });
 
+    const tableData = await GuestTable.findAll({
+      where: {
+        server_requested: true,
+      },
+    });
+
     const orders = orderData.map((order) => order.get({ plain: true }));
+    const tables = tableData.map((table) => table.get({ plain: true }));
     console.log(orders);
-    res.render("control", { orders });
+    console.log(tables);
+    res.render("control", { orders, tables });
   } catch (err) {
     res.status(500).json(err);
   }

@@ -15,13 +15,9 @@ function openMenu(evt, menuItem) {
   evt.currentTarget.className += " active";
 }
 
-//event listeners for...
-//view cart and view bill
-
+// Function/listener for creating a pending order
 const menuFormHandler = async (event) => {
   event.preventDefault();
-
-  // get info from form
 
   let pressedButton = event.target;
   const menu_item_id = parseInt(pressedButton.getAttribute("data-id"));
@@ -43,3 +39,22 @@ let addButtons = document.querySelectorAll(".addToCart");
 addButtons.forEach((button) => {
   button.addEventListener("click", menuFormHandler);
 });
+
+// Function/listener for requesting server
+
+const requestServerHandler = async (event) => {
+  event.preventDefault();
+
+  const response = await fetch("/api/table/request", {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+  });
+
+  if (!response.ok) {
+    alert(JSON.stringify(response));
+  }
+};
+
+document
+  .querySelector("#requestServer")
+  .addEventListener("click", requestServerHandler);

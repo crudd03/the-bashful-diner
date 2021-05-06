@@ -20,6 +20,7 @@ router.post("/create", async (req, res) => {
     // const tableParse = JSON.parse(req.body);
     const tableData = await GuestTable.create({
       table_number: req.body.table_number,
+      server_requested: false,
     });
     console.log(tableData);
 
@@ -104,6 +105,67 @@ router.put("/update", async (req, res) => {
     console.log(req.session.table_id);
     console.log(statusUpdate);
     res.status(200).json(statusUpdate);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+// Route for updating order to complete
+router.put("/complete", async (req, res) => {
+  try {
+    const statusUpdate = await GuestOrder.update(
+      {
+        status: "COMPLETED",
+      },
+      {
+        where: {
+          id: req.body.id,
+        },
+      }
+    );
+    console.log(statusUpdate);
+    res.status(200).json(statusUpdate);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+// Route for requesting server
+router.put("/request", async (req, res) => {
+  try {
+    const requestUpdate = await GuestTable.update(
+      {
+        server_requested: true,
+      },
+      {
+        where: {
+          id: req.session.table_id,
+        },
+      }
+    );
+    console.log(req.session.table_id);
+    console.log(requestUpdate);
+    res.status(200).json(requestUpdate);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+// Route for completing request for server
+router.put("/response", async (req, res) => {
+  try {
+    const responseUpdate = await GuestTable.update(
+      {
+        server_requested: false,
+      },
+      {
+        where: {
+          id: req.body.request_id,
+        },
+      }
+    );
+    console.log(responseUpdate);
+    res.status(200).json(responseUpdate);
   } catch (err) {
     res.status(400).json(err);
   }

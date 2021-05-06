@@ -15,9 +15,8 @@ GuestTable.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    serverRequested: {
+    server_requested: {
       type: DataTypes.BOOLEAN,
-      defaultValue: false,
     },
   },
   {
