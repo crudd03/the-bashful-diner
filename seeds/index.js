@@ -17,10 +17,10 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  const tables = await GuestTable.bulkCreate(tableData, {
-    individualHooks: true,
-    returning: true,
-  });
+  // const tables = await GuestTable.bulkCreate(tableData, {
+  //   individualHooks: true,
+  //   returning: true,
+  // });
   // Create trips at random
   // for (let i = 0; i < 10; i++) {
   //   // Get a random traveller's `id`
