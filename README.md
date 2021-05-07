@@ -1,19 +1,27 @@
 # The Bashful Diner
 
 ## Description
-This application was designed for those that struggle with or would prefer to limit in-person communication while visiting a restaurant. For more quiet shy folks. For those that enjoy dining out but not necessarily the human interaction element. For people that are hearing impaired or part of the deaf community. Have a night out, but still feel the comfort of having the night in! The Bashful Diner aims to provide the user an exclusive dining experience while enjoying delicious foods at your favorite eatery!
+The Bashful Diner will automate everything involved with ordering at a restaurant in order to make the process simple and streamlined, for both guests and restaurant staff. Our app offers all users a dining experience that aims to reduce the stress of any awkwardness or miscommunications that go hand-in-hand with service-based social interactions. Restaurant guests will be more in control of and feel more comfortable about their time out in public than ever before, and restaurant staff will receive clear and concise communication with customers in order to ensure efficiency and maximum satisfaction for all parties.
 
-* When the guest arrives at a given restuarant they are able to enter their name and table number.
-* Once logged in the guest is able to access the full menu.
-* When the guest selects a menu item it is added to the order. They can order multiple items from the menu.
-* The guest can make special requests to customize their meal.
-* Once the order has been placed the guest will receive status updates as their order progresses.
-* The guest can add-on to the order at any time.
-* When the guest orders an additional item, they can see that it has been added to the order and the eta or the order will be adjusted.
-* If the guest needs they can request to speak to a server and the server will be notified to visit their table.
-* When the guest has finished their meal, they are able to view the bill and request to cash out.
-* When the guest is viewing the bill the sales tax, and service fee is calculated and added to the total bill.
-* When the staff member arrives at work they are able to login using their username and password.
+Guest Side
+* When the guest arrives at a given restuarant, they will start on the landing page of the app which will ask for their assigned table number
+* Once logged in, the guest is directed to the full menu
+* When the guest selects a menu item, it is added to their order shopping cart. Guests may order multiple items from the menu.
+* The guest can input special requests in order to customize their meal
+* The guest may then submit the order items in their shopping cart and the items will leave the shopping cart and appear on the bill page.
+* The bill page will show all submitted order items and the current bill, which includes all items, added tax, service fee, and total cost.
+* On every page, the guest will be able to click a button which will notify waitstaff to be called to their table to answer any questions or fulfill any atypical requests 
+* When the guest has finished their meal, they will be able to view the bill and request to cash out
+
+Server Side
+* When a server arrives at work, they will start on the landing page of the app and can click the "employee login" button at the bottom of the page
+* They will be able to login to the app using a username and password
+* They are then directed to a control page where all open orders submitted by current restaurant guests are posted so that the server may see what orders still need to be fulfilled
+* All orders on the control page will show which table # it was ordered by, the food item name, and any customization/modification notes made by the guest
+* Once an order is fulfilled, the server will click the order complete button to remove it from the open orders page
+* Notifications made by tables to request a server for assistance will pop up at the top of the control page
+* When finished, the server can click the logout button at the bottom of the page which will return them to the landing page
+
 
 ## Deployed Application
 
@@ -29,7 +37,15 @@ This application was designed for those that struggle with or would prefer to li
 APIs? Heroku? Eh?
 
 ## Future Development
-In the future we'd love to see our vision grow to include the ability to pay within the application and to include multiple language options to increase accessibility. Ideally we'd like to see this application allow the user search for restaurants and be able to select from a list of establishments nearby. To accommedate unique dietary requirements we'd like to give the guest the ability to search for meal types/categories (i.e.; vegan, vegetarian, gluten-free, etc.).
+In the future we'd love to see our vision grow to include many exciting and helpful features including:
+* The addition of more language options
+* Reservation creation prior to guest arrival 
+* User reviews of service/restaurant functionality
+* Guest login creation which would hold save data of previous dining experiences/orders
+* In-app payment handling
+* An order progress status bar
+* A map function showing all restaurants within your area that use the Bashful Diner
+* A search function on the menu that would allow users to sort dishes based on dietary restrictions and preferences
 
 ## Collaborators
 **Lauren Wenzel**
