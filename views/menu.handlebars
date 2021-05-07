@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <div class="col-lg-9 col-md-12 col-sm-12 p-3">
+    <div class="col-lg-9 col-md-12 col-sm-12 p-2">
       <div id="Appetizers" class="tabcontent">
         <h2 class="p-2">Appetizers</h2>
         {{#each menu as |menuItem| }}
@@ -44,8 +44,8 @@
         <h2 class="p-2">Main Dishes</h2>
         {{#each menu as |menuItem| }}
         {{#if menuItem.main}}
-        <li class="p-1">{{menuItem.dish_name}}.................................${{menuItem.price}} <button data-id="{{menuItem.id}}"
-            class="addToCart">Add to Cart</button></li>
+        <li class="p-1">{{menuItem.dish_name}}.................................${{menuItem.price}} <button
+            data-id="{{menuItem.id}}" class="addToCart">Add to Cart</button></li>
         <p class="description">{{menuItem.description}}</p>
         {{/if}}
         {{/each}}
@@ -65,21 +65,18 @@
   </div>
 </div>
 
-<div class="container-fluid border-bottom border-4 m-1">
-  <footer class="m-4">
-    <div class="row">
-      <div class="col-lg-3 col-md-12 col-sm-12"></div>
-      <button id="requestServer" class="linkStyle buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2">
-        Request Server
-      </button>
-      <button class="buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2">
-        <a class="linkStyle" href="/cart">View Cart</a></button>
-      <button class="buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2">
-        <a class="linkStyle" href="/bill">View Current Bill</a></button>
-      </button>
-      <div class="col-lg-3"></div>
-    </div>
-  </footer>
+<div class="row p-3">
+  <div class="col-lg-3 col-md-12 col-sm-12 m-1"></div>
+  <button id="requestServer" class="linkStyle buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2">
+    Request Server
+  </button>
+  <button class="buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2">
+    <a class="linkStyle" href="/cart">View Cart</a></button>
+  <button class="buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2">
+    <a class="linkStyle" href="/bill">View Current Bill</a></button>
+  </button>
+  <div class="col-lg-3"></div>
 </div>
+
+<div class="container-fluid border-bottom border-4"></div>
 <script src="/js/menu.js"></script>
- 

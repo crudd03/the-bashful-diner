@@ -1,8 +1,3 @@
-
-
-//when guest clinks "Customize" a modal pops up for guest to type in modification
-//When guest clicks "Request Server" the staff side is notified by table number
-
 // Submit order button functions/listeners
 const submitOrderHandler = async (event) => {
   event.preventDefault();
@@ -16,7 +11,7 @@ const submitOrderHandler = async (event) => {
     alert(JSON.stringify(response));
   }
 
-  window.location.reload();
+  document.location.replace("/bill");
 };
 
 document
