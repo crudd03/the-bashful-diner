@@ -5,7 +5,7 @@ const { Menu_Item, GuestOrder, Staff, GuestTable } = require("../models");
 
 router.get("/", async (req, res) => {
   if (req.session.logged_in) {
-    res.redirect("/cart");
+    res.redirect("/bill");
     return;
   }
 
@@ -24,11 +24,11 @@ router.get("/menu", async (req, res) => {
   }
 });
 
-router.get('/menu/:id', async (req, res) => {
+router.get("/menu/:id", async (req, res) => {
   try {
-    const itemData = await Menu_Item.findByPk(req.params.id)
+    const itemData = await Menu_Item.findByPk(req.params.id);
     const menuItem = itemData.get({ plain: true });
-    res.render("menuItem", menuItem );
+    res.render("menuItem", menuItem);
   } catch (err) {
     res.status(500).json(err);
   }
