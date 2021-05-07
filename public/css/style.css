@@ -144,11 +144,12 @@ header {
   text-shadow: 1px 1px 2px #46c496;
 }
 
-
-
-
 li {
   list-style: none;
+}
+
+.orderedItems {
+  float: right;
 }
 
 /* .has-nuts {

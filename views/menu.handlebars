@@ -5,64 +5,70 @@
   <h2 class="display-6 text-center p-2">Menu</h2>
 </header>
 
-<div class="tab">
-  <div class="vertical-menu">
-    <p class="active">Menu Items</p>
-    <a class="tablinks" onclick="openMenu(event, 'Appetizers')">Appetizers</a>
-    <a class="tablinks" onclick="openMenu(event, 'Soups/Salads')">Soups/Salads</a>
-    <a class="tablinks" onclick="openMenu(event, 'Main Dishes')">Main Dishes</a>
-    <a class="tablinks" onclick="openMenu(event, 'Desserts')">Desserts</a>
+<div class="container">
+  <div class="row m-2">
+    <div class="tab col-lg-3 col-md-12 col-sm-12 p-1">
+      <div class="vertical-menu">
+        <p class="active">Menu Items</p>
+        <a class="tablinks" onclick="openMenu(event, 'Appetizers')">Appetizers</a>
+        <a class="tablinks" onclick="openMenu(event, 'Soups/Salads')">Soups/Salads</a>
+        <a class="tablinks" onclick="openMenu(event, 'Main Dishes')">Main Dishes</a>
+        <a class="tablinks" onclick="openMenu(event, 'Desserts')">Desserts</a>
+      </div>
+    </div>
+
+    <div class="col-lg-9 col-md-12 col-sm-12 p-3">
+      <div id="Appetizers" class="tabcontent">
+        <h2 class="p-2">Appetizers</h2>
+        {{#each menu as |menuItem| }}
+        {{#if menuItem.appetizer}}
+        <li>{{menuItem.dish_name}}.................................${{menuItem.price}} <button data-id="{{menuItem.id}}"
+            class="addToCart">Add to Cart</button></li>
+        <p class="description">{{menuItem.description}}</p>
+        {{/if}}
+        {{/each}}
+      </div>
+
+      <div id="Soups/Salads" class="tabcontent" style="display: none">
+        <h2 class="p-2">Soups/Salads</h2>
+        {{#each menu as |menuItem| }}
+        {{#if menuItem.soup_salad}}
+        <li>{{menuItem.dish_name}}.................................${{menuItem.price}} <button data-id="{{menuItem.id}}"
+            class="addToCart">Add to Cart</button></li>
+        <p class="description">{{menuItem.description}}</p>
+        {{/if}}
+        {{/each}}
+      </div>
+
+      <div id="Main Dishes" class="tabcontent" style="display: none">
+        <h2 class="p-2">Main Dishes</h2>
+        {{#each menu as |menuItem| }}
+        {{#if menuItem.main}}
+        <li class="p-1">{{menuItem.dish_name}}.................................${{menuItem.price}} <button data-id="{{menuItem.id}}"
+            class="addToCart">Add to Cart</button></li>
+        <p class="description">{{menuItem.description}}</p>
+        {{/if}}
+        {{/each}}
+      </div>
+
+      <div id="Desserts" class="tabcontent" style="display: none">
+        <h2 class="p-2">Desserts</h2>
+        {{#each menu as |menuItem| }}
+        {{#if menuItem.dessert}}
+        <li>{{menuItem.dish_name}}.................................${{menuItem.price}} <button data-id="{{menuItem.id}}"
+            class="addToCart">Add to Cart</button></li>
+        <p class="description">{{menuItem.description}}</p>
+        {{/if}}
+        {{/each}}
+      </div>
+    </div>
   </div>
 </div>
 
-<div id="Appetizers" class="tabcontent">
-  <h2>Appetizers</h2>
-  {{#each menu as |menuItem| }}
-  {{#if menuItem.appetizer}}
-  <li>{{menuItem.dish_name}}.................................${{menuItem.price}} <button data-id="{{menuItem.id}}"
-      class="addToCart">Add to Cart</button></li>
-  <p class="description">{{menuItem.description}}</p>
-  {{/if}}
-  {{/each}}
-</div>
-
-<div id="Soups/Salads" class="tabcontent" style="display: none">
-  <h2>Soups/Salads</h2>
-  {{#each menu as |menuItem| }}
-  {{#if menuItem.soup_salad}}
-  <li>{{menuItem.dish_name}}.................................${{menuItem.price}} <button data-id="{{menuItem.id}}"
-      class="addToCart">Add to Cart</button></li>
-  <p class="description">{{menuItem.description}}</p>
-  {{/if}}
-  {{/each}}
-</div>
-
-<div id="Main Dishes" class="tabcontent" style="display: none">
-  <h2>Main Dishes</h2>
-  {{#each menu as |menuItem| }}
-  {{#if menuItem.main}}
-  <li>{{menuItem.dish_name}}.................................${{menuItem.price}} <button data-id="{{menuItem.id}}"
-      class="addToCart">Add to Cart</button></li>
-  <p class="description">{{menuItem.description}}</p>
-  {{/if}}
-  {{/each}}
-</div>
-
-<div id="Desserts" class="tabcontent" style="display: none">
-  <h2>Desserts</h2>
-  {{#each menu as |menuItem| }}
-  {{#if menuItem.dessert}}
-  <li>{{menuItem.dish_name}}.................................${{menuItem.price}} <button data-id="{{menuItem.id}}"
-      class="addToCart">Add to Cart</button></li>
-  <p class="description">{{menuItem.description}}</p>
-  {{/if}}
-  {{/each}}
-</div>
-
-<div class="container-fluid border-bottom border-4">
+<div class="container-fluid border-bottom border-4 m-1">
   <footer class="m-4">
     <div class="row">
-      <div class="col-lg-3"></div>
+      <div class="col-lg-3 col-md-12 col-sm-12"></div>
       <button id="requestServer" class="linkStyle buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2">
         Request Server
       </button>

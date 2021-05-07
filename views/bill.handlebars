@@ -1,57 +1,75 @@
 <header>
-    <h1 class="border-top border-4 display-4 text-center p-3">
-      <span class="fas fa-utensils"></span> The Bashful Diner
-    </h1>
-    <h2 class="display-6 text-center p-2">Thank you!</h2>
-    <h3 class="text-center p-2">Here's your bill!</h3>
-  </header>
+  <h1 class="border-top border-4 display-4 text-center p-3">
+    <span class="fas fa-utensils"></span> The Bashful Diner
+  </h1>
+  <h2 class="display-6 text-center p-2">Thank you!</h2>
+</header>
 
-  <div class="container p-3">
-    <table class="table table-bordered text-center border border-4">
-      <thead>
-        <tr>
-          <th scope="col" class="align-middle">Ordered Items</th>
-          <th>
-          {{#each billItems as |billItem| }} 
-          {{ billItem.menu_item.dish_name }} | ${{ billItem.menu_item.price }} <br>
-          {{/each}}
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="col" class="align-middle">Subtotal</th>
-          <th>${{getSub billItems }} </th>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-          <th scope="col" class="align-middle">Sales Tax</th>
-          <th>${{getTax billItems }} </th>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-          <th scope="col" class="align-middle">Service Fee</th>
-          <th> ${{getTip billItems }} </th>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-          <th scope="col" class="align-middle">Total</th>
-          <th>${{getTotal billItems }}</th>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<div class="container p-3">
+  <div class="row">
 
-  <div class="container-fluid border-bottom border-4">
-    <footer class="m-4">
-      <div class="row">
-        <div class="col-lg-5"></div>
-        <button id="requestServer" class="linkStyle buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2">Request Server</button>
-        <div class="col-lg-5"></div>
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <div class="card border border-4 p-4 m-2">
+        <div class="card-body">
+          <h4 class="card-title text-center p-3">Order Status</h4>
+          <h5 class="card-text text-center"> Thank you for your order!</h5>
+          <h5 class="text-center">Your food will be ready soon!</h5>
+        </div>
       </div>
-    </footer>
+    </div>
+
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <table class="table table-bordered border border-4">
+        <thead>
+          <tr>
+            <th scope="col" class="align-middle text-center">Ordered Items</th>
+            <th>
+              {{#each billItems as |billItem| }}
+              {{ billItem.menu_item.dish_name }} <span class="orderedItems">${{ billItem.menu_item.price }}</span><br>
+              {{/each}}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="col" class="align-middle">Subtotal</th>
+            <th class="orderedItems">${{getSub billItems }} </th>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <th scope="col" class="align-middle">Sales Tax</th>
+            <th class="orderedItems">${{getTax billItems }} </th>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <th scope="col" class="align-middle">Service Fee</th>
+            <th class="orderedItems"> ${{getTip billItems }} </th>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <th scope="col" class="align-middle">Total</th>
+            <th class="orderedItems">${{getTotal billItems }}</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-  <script src="/js/bill.js"></script>
+</div>
+
+<div class="container-fluid border-bottom border-4">
+  <footer class="m-4">
+    <div class="row">
+      <div class="col-lg-4"></div>
+      <button class="buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2">
+        <a class="linkStyle" href="/menu">Menu</a>
+      </button>
+      <button id="requestServer" class="linkStyle buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2">Request
+        Server</button>
+      <div class="col-lg-4"></div>
+    </div>
+  </footer>
+</div>
+<script src="/js/bill.js"></script>
