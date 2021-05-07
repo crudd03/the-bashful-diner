@@ -37,12 +37,12 @@ router.get("/bill", async (req, res) => {
           attributes: ["table_number"],
         },
       ],
-      where: {
-        table_id: req.session.table_id,
-        // table_id: 2,
+      where:
+      table_id: req.session.table_id,
+     
       },
     });
-
+    
     const billItems = billData.map((bill) => bill.get({ plain: true }));
 
     res.render("bill", { billItems });

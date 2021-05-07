@@ -21,25 +21,25 @@
       <tbody>
         <tr>
           <th scope="col" class="align-middle">Subtotal</th>
-          <th> menu_item.price </th>
+          <th>${{getSub billItems }} </th>
         </tr>
       </tbody>
       <tbody>
         <tr>
           <th scope="col" class="align-middle">Sales Tax</th>
-          <th> subtotal plus 6% </th>
+          <th>${{getTax billItems }} </th>
         </tr>
       </tbody>
       <tbody>
         <tr>
           <th scope="col" class="align-middle">Service Fee</th>
-          <th> 18% of subtotal </th>
+          <th> ${{getTip billItems }} </th>
         </tr>
       </tbody>
       <tbody>
         <tr>
           <th scope="col" class="align-middle">Total</th>
-          <th> total </th>
+          <th>${{getTotal billItems }}</th>
         </tr>
       </tbody>
     </table>
