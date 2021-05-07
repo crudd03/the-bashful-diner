@@ -1,44 +1,54 @@
- <header>
-    <h1 class="border-top border-4 display-4 text-center p-3">
-      <span class="fas fa-utensils"></span> The Bashful Diner
-    </h1>
-    <h2 class="display-6 text-center p-2">Current Orders</h2>
-  </header>
-  {{#each tables as |table|}}
-  <p>Table number {{table.table_number}} needs help! <button data-id="{{table.id}}" class="serverResponse">OK</button></p>
-  {{/each}}
-  <div class="container">
-    <table class="table align-middle text-center">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Menu Id</th>
-          <th scope="col">Modification</th>
-          <th scope="col">Table Number</th>
-          <th scope="col">Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each orders as |order| }}
-        <tr>
-          <th scope="row">{{order.id}}</th>
-          <td> <a href="/menu/{{order.menu_item_id}}">{{order.menu_item.dish_name}}</a></td>
-          <td>{{order.note}}</td>
-          <td>{{order.guesttable.table_number}}</td>
-          <td><button data-id="{{order.id}}" class="complete buttonStyle text-center p-2 m-1">Order Complete</button></td>
-        </tr>
-        {{/each}}
-      </tbody>
-    </table>
-  </div>
+<header>
+  <h1 class="border-top border-4 display-4 text-center p-3">
+    <span class="fas fa-utensils"></span> The Bashful Diner
+  </h1>
+  <h2 class="display-6 text-center p-2">Current Orders</h2>
+</header>
 
-  <div class="container-fluid border-bottom border-4">
-    <footer class="m-4">
-      <div class="row">
-        <div class="col-lg-5"></div>
-        <button id="logout" class="buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2"><a class="linkStyle" href="/login">Logout</a></button>
-        <div class="col-lg-5"></div>
-      </div>
-    </footer>
-  </div>
-  <script src="/js/control.js"></script>
+<div class="container-fluid">
+  <ul class="row">
+    {{#each tables as |table|}}
+    <li class="col-lg-2 col-md-3 col-sm-12">
+      <p><span class="fas fa-utensils m-1"></span> Table number {{table.table_number}} needs help! <button
+          data-id="{{table.id}}" class="serverResponse linkStyle buttonStyle text-center m-1">OK</button></p>
+      {{/each}}
+    </li>
+  </ul>
+</div>
+
+<div class="container">
+  <table class="table align-middle text-center">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Menu Id</th>
+        <th scope="col">Modification</th>
+        <th scope="col">Table Number</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each orders as |order| }}
+      <tr>
+        <th scope="row">{{order.id}}</th>
+        <td> <a href="/menu/{{order.menu_item_id}}">{{order.menu_item.dish_name}}</a></td>
+        <td>{{order.note}}</td>
+        <td>{{order.guesttable.table_number}}</td>
+        <td><button data-id="{{order.id}}" class="complete buttonStyle text-center p-2 m-1">Order Complete</button></td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+
+<div class="container-fluid border-bottom border-4">
+  <footer class="m-4">
+    <div class="row">
+      <div class="col-lg-5"></div>
+      <button id="logout" class="buttonStyle text-center col-lg-2 col-sm-12 p-2 m-2"><a class="linkStyle"
+          href="/login">Logout</a></button>
+      <div class="col-lg-5"></div>
+    </div>
+  </footer>
+</div>
+<script src="/js/control.js"></script>
