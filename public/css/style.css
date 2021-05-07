@@ -79,6 +79,12 @@ header {
 }
 
 
+
+
+li {
+  list-style: none;
+}
+
 /* .has-nuts {
   font-family: 'Exo 2', sans-serif;
   font-weight: bolder;
