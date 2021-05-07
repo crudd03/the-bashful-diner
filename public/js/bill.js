@@ -7,7 +7,7 @@ const requestCashOut = async (event) => {
       showCancelButton: true,
       confirmButtonColor: "#46c496",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Please bring my Tab!",
+      confirmButtonText: "Yes. Please bring my Tab!",
     })
     .then((result) => {
       if (result.isConfirmed) {
@@ -59,6 +59,15 @@ const requestServerHandler = async (event) => {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
   });
+  Swal.fire({
+    toast: true,
+    position: 'center-center',
+    icon: 'success',
+    iconColor: '#46c496',
+    title: 'Your server should be with you shortly',
+    showConfirmButton: false,
+    timer: 3000
+  })
 
   if (!response.ok) {
     alert(JSON.stringify(response));
