@@ -104,24 +104,8 @@ const customizeHandler = async (event) => {
   }).then((result) => {
     
       location.reload();
-    })
-    
- 
-  
+    })    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 let customizeButtons = document.querySelectorAll(".customize");
 

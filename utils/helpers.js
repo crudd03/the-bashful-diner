@@ -2,7 +2,7 @@ module.exports = {
   
   getSub:  (billItems) => {
     var total = billItems.reduce(function (a, b) { return a + b.menu_item.price; }, 0);
-    return total;
+    return (total).toFixed(2);
 },   
 
   getTax:  (billItems) => {

@@ -6,7 +6,7 @@ const requestCashOut = async (event) => {
     showCancelButton: true,
     confirmButtonColor: '#46c496',
     cancelButtonColor: '#d33',
-    confirmButtonText: 'Please bring my Tab!',
+    confirmButtonText: 'Yes. Please bring my Tab!',
   }).then((result) => {
     if (result.isConfirmed) {
       Swal.fire({
