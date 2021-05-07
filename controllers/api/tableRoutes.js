@@ -99,6 +99,7 @@ router.put("/update", async (req, res) => {
       {
         where: {
           table_id: req.session.table_id,
+          status: "PENDING",
         },
       }
     );
@@ -166,6 +167,26 @@ router.put("/response", async (req, res) => {
     );
     console.log(responseUpdate);
     res.status(200).json(responseUpdate);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+// Route for updating customization
+router.put("/customize", async (req, res) => {
+  try {
+    const customizeUpdate = await GuestOrder.update(
+      {
+        note: req.body.customization,
+      },
+      {
+        where: {
+          id: req.body.id,
+        },
+      }
+    );
+    console.log(customizeUpdate);
+    res.status(200).json(customizeUpdate);
   } catch (err) {
     res.status(400).json(err);
   }

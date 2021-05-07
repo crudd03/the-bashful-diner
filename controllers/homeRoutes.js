@@ -37,7 +37,7 @@ router.get("/bill", async (req, res) => {
           attributes: ["table_number"],
         },
       ],
-      where: {
+      where:
       table_id: req.session.table_id,
      
       },

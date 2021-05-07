@@ -64,3 +64,31 @@ const requestServerHandler = async (event) => {
 document
   .querySelector("#requestServer")
   .addEventListener("click", requestServerHandler);
+
+// Customize button function
+const customizeHandler = async (event) => {
+  event.preventDefault();
+
+  let customization = prompt(
+    "Please enter any notes or changes you would like to this order"
+  );
+
+  let pressedButton = event.target;
+  const id = parseInt(pressedButton.getAttribute("data-id"));
+
+  const response = await fetch("/api/table/customize", {
+    method: "PUT",
+    body: JSON.stringify({ id, customization }),
+    headers: { "Content-Type": "application/json" },
+  });
+
+  if (!response.ok) {
+    alert(JSON.stringify(response));
+  }
+};
+
+let customizeButtons = document.querySelectorAll(".customize");
+
+customizeButtons.forEach((button) => {
+  button.addEventListener("click", customizeHandler);
+});
