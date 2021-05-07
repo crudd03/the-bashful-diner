@@ -1,8 +1,7 @@
 * {
-  font-family: 'Lobster';
+  font-family: "Lobster";
   --animate-duration: 20s;
 }
-
 
 html {
   background-image: url(https://www.xmple.com/wallpaper/blue-stripes-lines-white-streaks-3200x1800-c2-7fffd4-f5fffa-l2-136-136-a-165-f-1.svg);
@@ -21,32 +20,32 @@ header {
 }
 
 .vertical-menu {
-  width: 200px; 
-  background-color: #46c496; 
+  width: 200px;
+  background-color: #46c496;
   color: white;
   padding-left: 8px;
 }
 
 .vertical-menu a {
-  background-color: #eee; 
-  color: black; 
-  display: block; 
+  background-color: #eee;
+  color: black;
+  display: block;
   padding: 12px;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 .vertical-menu a:hover {
-  background-color: rgb(155, 189, 179); 
+  background-color: rgb(155, 189, 179);
   cursor: pointer;
 }
 
 .vertical-menu a.active {
-  background-color: #46c496; 
+  background-color: #46c496;
   color: white;
 }
 
 #requestServer:hover {
-  background-color:rgb(155, 189, 179);
+  background-color: rgb(155, 189, 179);
 }
 
 #requestServer {
@@ -59,48 +58,48 @@ header {
   text-decoration: none;
   overflow: hidden;
   cursor: pointer;
-  color:black;
+  color: black;
   text-decoration: none;
   text-shadow: 1px 1px 2px #46c496;
-  }
-  
-  #requestServer:after {
+}
+
+#requestServer:after {
   content: "";
-  background: #90EE90;
-    display: block;
-    position: absolute;
-    padding-top: 300%;
-    padding-left: 350%;
-    margin-left: -20px!important;
-    margin-top: -120%;
-    opacity: 0;
-    transition: all 0.8s
-  }
-  
-  #requestServer:active:after {
-    padding: 0;
-    margin: 0;
-    opacity: 1;
-    transition: 0s
-  }
+  background: #90ee90;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+#requestServer:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
 
 .buttonStyle:hover {
-  background-color:rgb(155, 189, 179);
+  background-color: rgb(155, 189, 179);
 }
 
 .tabcontent {
-  float: left;
+  /* float: left; */
   font-size: 25px;
-  padding: 0px 12px;
+  /* padding: 0px 12px;
   width: 70%;
-  height: 300px;
+  height: 300px; */
 }
 
 .tab {
-  float: left;
+  /* float: left; */
   font-size: 18px;
-  padding-left: 100px;
-  width: 30%;
+  /* padding-left: 100px; */
+  /* width: 30%; */
 }
 
 .addToCart {
@@ -108,40 +107,40 @@ header {
   font-size: 18px;
   text-align: center;
   border: 1px solid;
-  background-color: #46c496; 
+  background-color: #46c496;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   text-decoration: none;
   overflow: hidden;
   cursor: pointer;
-  }
-  
-  .addToCart:after {
+}
+
+.addToCart:after {
   content: "";
-  background: #90EE90;
-    display: block;
-    position: absolute;
-    padding-top: 300%;
-    padding-left: 350%;
-    margin-left: -20px!important;
-    margin-top: -120%;
-    opacity: 0;
-    transition: all 0.8s
-  }
-  
-  .addToCart:active:after {
-    padding: 0;
-    margin: 0;
-    opacity: 1;
-    transition: 0s
-  }
+  background: #90ee90;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+.addToCart:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
 
 .description {
   font-size: 16px;
 }
 
 .linkStyle {
-  color:black;
+  color: black;
   text-decoration: none;
   text-shadow: 1px 1px 2px #46c496;
 }
@@ -152,6 +151,15 @@ li {
 
 .orderedItems {
   float: right;
+}
+
+.billCards {
+  background-color: #eee;
+  box-shadow: -10px -15px #46c496;
+}
+
+.card-body {
+  background-color: #eee;
 }
 
 /* .has-nuts {
