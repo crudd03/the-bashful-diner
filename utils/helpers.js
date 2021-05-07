@@ -16,5 +16,9 @@ module.exports = {
 getTotal:  (billItems) => {
   var total = billItems.reduce(function (a, b) { return a + b.menu_item.price; }, 0);
   return (total + (total * .18) + (total * .06)).toFixed(2);
-},       
+},
+getMin: (prep_time) => {
+  return (prep_time / 60);
+}
+
 };
