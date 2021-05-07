@@ -24,6 +24,16 @@ router.get("/menu", async (req, res) => {
   }
 });
 
+router.get('/menu/:id', async (req, res) => {
+  try {
+    const itemData = await Menu_Item.findByPk(req.params.id)
+    const menuItem = itemData.get({ plain: true });
+    res.render("menuItem", menuItem );
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get("/bill", async (req, res) => {
   try {
     const billData = await GuestOrder.findAll({
