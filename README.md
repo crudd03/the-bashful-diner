@@ -9,9 +9,14 @@ Guest Side
 * When the guest selects a menu item, it is added to their order shopping cart. Guests may order multiple items from the menu.
 * The guest can input special requests in order to customize their meal
 * The guest may then submit the order items in their shopping cart and the items will leave the shopping cart and appear on the bill page.
-* The bill page will show all submitted order items and the current bill, which includes all items, added tax, service fee, and total cost.
+* The bill page will show all submitted order items and the current bill, which includes all items, a subtotal, added tax, service fee, and total cost.
 * On every page, the guest will be able to click a button which will notify waitstaff to be called to their table to answer any questions or fulfill any atypical requests 
 * When the guest has finished their meal, they will be able to view the bill and request to cash out
+![Screenshot](assets/the-bashful-diner-landing.png)
+![Screenshot](assets/the-bashful-diner-menu.png)
+![Screenshot](assets/the-bashful-diner-cart.png)
+![Screenshot](assets/the-bashful-diner-bill.png)
+![Screenshot](assets/the-bashful-diner-billmodal.png)
 
 Server Side
 * When a server arrives at work, they will start on the landing page of the app and can click the "employee login" button at the bottom of the page
@@ -21,11 +26,13 @@ Server Side
 * Once an order is fulfilled, the server will click the order complete button to remove it from the open orders page
 * Notifications made by tables to request a server for assistance will pop up at the top of the control page
 * When finished, the server can click the logout button at the bottom of the page which will return them to the landing page
+![Screenshot](assets/the-bashful-diner-login.png)
+![Screenshot](assets/the-bashful-diner-control.png)
 
 
 ## Deployed Application
 
-[The Bashful Diner]()
+[The Bashful Diner](http://www.thebashfuldiner.com/)
 
 ## Table of Contents
 - [Technology Utilized](#technology-utilized)
@@ -34,17 +41,17 @@ Server Side
 - [Questions](#questions)
 
 ## Technology Utilized
-APIs? Heroku? Eh?
+Sequelize, Express, Node.js, MySQL, Bootstrap, Handlebars, Animate CSS, and Sweet Alert 2
 
 ## Future Development
 In the future we'd love to see our vision grow to include many exciting and helpful features including:
 * The addition of more language options
 * Reservation creation prior to guest arrival 
-* User reviews of service/restaurant functionality
-* Guest login creation which would hold save data of previous dining experiences/orders
+* User reviews of service/restaurant experience
+* Guest login creation which would hold saved data of previous dining experiences/orders
 * In-app payment handling
-* An order progress status bar
-* A map function showing all restaurants within your area that use the Bashful Diner
+* An order progress status bar which will update in real time
+* A map function showing all restaurants that use the Bashful Diner within a specific area 
 * A search function on the menu that would allow users to sort dishes based on dietary restrictions and preferences
 
 ## Collaborators
