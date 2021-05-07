@@ -1,3 +1,5 @@
+
+
 //when guest clinks "Customize" a modal pops up for guest to type in modification
 //When guest clicks "Request Server" the staff side is notified by table number
 
@@ -68,24 +70,58 @@ document
 // Customize button function
 const customizeHandler = async (event) => {
   event.preventDefault();
-
-  let customization = prompt(
-    "Please enter any notes or changes you would like to this order"
-  );
-
   let pressedButton = event.target;
   const id = parseInt(pressedButton.getAttribute("data-id"));
 
-  const response = await fetch("/api/table/customize", {
-    method: "PUT",
-    body: JSON.stringify({ id, customization }),
-    headers: { "Content-Type": "application/json" },
-  });
+  swal.fire({
+    title: 'How would you like to customize your meal?',
+    input: 'text',
+    inputAttributes: {
+      autocapitalize: 'off'
+    },
+    showCancelButton: true,
+    confirmButtonText: 'Send Note',
+    showLoaderOnConfirm: true,
+    preConfirm: (mod) => {
+      return fetch("/api/table/customize", {
+        method: "PUT",
+        body: JSON.stringify({ id, mod }),
+        headers: { "Content-Type": "application/json" },
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(response.statusText)
+          }
+          return response.json()
+        })
+        .catch(error => {
+          Swal.showValidationMessage(
+            `Request failed: ${error}`
+          )
+        })
+    },
+    allowOutsideClick: () => !Swal.isLoading()
+  }).then((result) => {
+    
+      location.reload();
+    })
+    
+ 
+  
+}
 
-  if (!response.ok) {
-    alert(JSON.stringify(response));
-  }
-};
+
+
+
+
+
+
+
+
+
+
+
+
 
 let customizeButtons = document.querySelectorAll(".customize");
 

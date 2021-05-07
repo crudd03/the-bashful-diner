@@ -1,6 +1,6 @@
 <header>
-    <h1 class="border-top border-4 display-4 text-center p-3">
-        <span class="fas fa-utensils"></span> The Bashful Diner
+    <h1 class="border-top border-4 display-4 text-center p-3 animate__animated animate__fadeOut animate__fadeIn ">
+        <span class="fas fa-utensils "></span> The Bashful Diner
     </h1>
     <h2 class="display-6 text-center p-2">Your Order</h2>
 </header>
@@ -12,15 +12,17 @@
                 <th scope="col">Food Item</th>
                 <th scope="col">Price</th>
                 <th scope="col">Edit</th>
+                <th scope="col">Note</th>
             </tr>
         </thead>
         <tbody>
-            {{#each cartItems as |cartItem| }}
+            {{#each cartItems as |cartItem| }}  
             <tr>
                 <th scope="row">{{ cartItem.menu_item.dish_name }}</th>
                 <th>${{ cartItem.menu_item.price }}</th>
                 <th><button data-id="{{cartItem.id}}" class="remove buttonStyle text-center p-1 m-1">Remove</button><button
                         data-id="{{cartItem.id}}" class="customize buttonStyle text-center p-1 m-1">Customize</button></th>
+                <th>{{#if cartItem.note}} {{cartItem.note}} {{/if}}</th>
             </tr>
             {{/each}}
         </tbody>
@@ -40,4 +42,32 @@
         </div>
     </footer>
 </div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Order Modification</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <p>Please enter any notes or changes you would like to this order</p>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="/js/cart.js"></script>

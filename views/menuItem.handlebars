@@ -1,0 +1,29 @@
+<header>
+  <h1 class="border-top border-4 display-4 text-center p-3">
+    <span class="fas fa-utensils"></span> The Bashful Diner
+  </h1>
+  <h2 class="display-6 text-center p-2">Menu Item Info</h2>
+</header>
+<div class="container">
+  <table class="table align-middle text-center">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Dish Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Has Nuts?</th>
+        <th scope="col">Prep Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{id}}</th>
+        <td>{{dish_name}} </td>
+        <td>{{description}}</td>
+        <td>{{has_nuts}}</td>
+        <td>{{getMin prep_time}} mins</td>
+      </tr>
+    </tbody>
+  </table>
+   <a href="/control/">Return to Current Orders</a>
+</div>

@@ -175,9 +175,9 @@ router.put("/response", async (req, res) => {
 // Route for updating customization
 router.put("/customize", async (req, res) => {
   try {
-    const customizeUpdate = await GuestOrder.update(
+    const modUpdate = await GuestOrder.update(
       {
-        note: req.body.customization,
+        note: req.body.mod,
       },
       {
         where: {
@@ -185,8 +185,8 @@ router.put("/customize", async (req, res) => {
         },
       }
     );
-    console.log(customizeUpdate);
-    res.status(200).json(customizeUpdate);
+    console.log(modUpdate);
+    res.status(200).json(modUpdate);
   } catch (err) {
     res.status(400).json(err);
   }
