@@ -9,9 +9,14 @@ Guest Side
 * When the guest selects a menu item, it is added to their order shopping cart. Guests may order multiple items from the menu.
 * The guest can input special requests in order to customize their meal
 * The guest may then submit the order items in their shopping cart and the items will leave the shopping cart and appear on the bill page.
-* The bill page will show all submitted order items and the current bill, which includes all items, added tax, service fee, and total cost.
+* The bill page will show all submitted order items and the current bill, which includes all items, a subtotal, added tax, service fee, and total cost.
 * On every page, the guest will be able to click a button which will notify waitstaff to be called to their table to answer any questions or fulfill any atypical requests 
 * When the guest has finished their meal, they will be able to view the bill and request to cash out
+![Screenshot](assets/the-bashful-diner-landing.png)
+![Screenshot](assets/the-bashful-diner-menu.png)
+![Screenshot](assets/the-bashful-diner-cart.png)
+![Screenshot](assets/the-bashful-diner-bill.png)
+![Screenshot](assets/the-bashful-diner-billmodal.png)
 
 Server Side
 * When a server arrives at work, they will start on the landing page of the app and can click the "employee login" button at the bottom of the page
@@ -21,6 +26,8 @@ Server Side
 * Once an order is fulfilled, the server will click the order complete button to remove it from the open orders page
 * Notifications made by tables to request a server for assistance will pop up at the top of the control page
 * When finished, the server can click the logout button at the bottom of the page which will return them to the landing page
+![Screenshot](assets/the-bashful-diner-login.png)
+![Screenshot](assets/the-bashful-diner-control.png)
 
 
 ## Deployed Application
