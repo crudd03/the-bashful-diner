@@ -28,6 +28,15 @@ const menuFormHandler = async (event) => {
     body: JSON.stringify({ menu_item_id }),
     headers: { "Content-Type": "application/json" },
   });
+  Swal.fire({
+    toast: true,
+    position: 'center-center',
+    icon: 'success',
+    iconColor: '#46c496',
+    title: 'Added to Cart',
+    showConfirmButton: false,
+    timer: 1000
+  })
 
   if (!response.ok) {
     alert(JSON.stringify(response));
