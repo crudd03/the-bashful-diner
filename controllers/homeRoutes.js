@@ -38,8 +38,8 @@ router.get("/bill", async (req, res) => {
         },
       ],
       where: {
-        // table_id: req.session.table_id,
-        table_id: 2,
+        table_id: req.session.table_id,
+        // table_id: 2,
       },
     });
 

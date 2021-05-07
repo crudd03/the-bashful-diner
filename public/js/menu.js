@@ -41,7 +41,6 @@ addButtons.forEach((button) => {
 });
 
 // Function/listener for requesting server
-
 const requestServerHandler = async (event) => {
   event.preventDefault();
 
