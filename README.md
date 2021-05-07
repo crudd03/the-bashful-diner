@@ -25,7 +25,7 @@ Server Side
 
 ## Deployed Application
 
-[The Bashful Diner]()
+[The Bashful Diner](http://www.thebashfuldiner.com/)
 
 ## Table of Contents
 - [Technology Utilized](#technology-utilized)
@@ -34,17 +34,17 @@ Server Side
 - [Questions](#questions)
 
 ## Technology Utilized
-APIs? Heroku? Eh?
+Sequelize, Express, Node.js, MySQL, Bootstrap, Handlebars, Animate CSS, and Sweet Alert 2
 
 ## Future Development
 In the future we'd love to see our vision grow to include many exciting and helpful features including:
 * The addition of more language options
 * Reservation creation prior to guest arrival 
-* User reviews of service/restaurant functionality
-* Guest login creation which would hold save data of previous dining experiences/orders
+* User reviews of service/restaurant experience
+* Guest login creation which would hold saved data of previous dining experiences/orders
 * In-app payment handling
-* An order progress status bar
-* A map function showing all restaurants within your area that use the Bashful Diner
+* An order progress status bar which will update in real time
+* A map function showing all restaurants that use the Bashful Diner within a specific area 
 * A search function on the menu that would allow users to sort dishes based on dietary restrictions and preferences
 
 ## Collaborators
