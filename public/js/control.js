@@ -67,3 +67,9 @@ const logout = async (event) => {
 };
 
 document.querySelector("#logout").addEventListener("click", logout);
+
+setInterval(function() {
+  window.location.reload();
+}, 30000); 
+
+setInterval() 
