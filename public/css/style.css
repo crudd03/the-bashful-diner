@@ -1,3 +1,12 @@
+:root {
+--seafoamGreen: #46c496;
+--grey:rgb(155, 189, 179);
+--paleWhite:#eee;
+--buttonFlash:#90ee90;
+--black: black;
+--white: white;
+}
+
 * {
   font-family: "Lobster";
   --animate-duration: 20s;
@@ -21,31 +30,31 @@ header {
 
 .vertical-menu {
   width: 200px;
-  background-color: #46c496;
-  color: white;
+  background-color: var(--seafoamGreen);
+  color: var(--white);
   padding-left: 8px;
 }
 
 .vertical-menu a {
-  background-color: #eee;
-  color: black;
+  background-color: var(--paleWhite);
+  color: var(--black);
   display: block;
   padding: 12px;
   text-decoration: none;
 }
 
 .vertical-menu a:hover {
-  background-color: rgb(155, 189, 179);
+  background-color: var(--grey);
   cursor: pointer;
 }
 
 .vertical-menu a.active {
-  background-color: #46c496;
-  color: white;
+  background-color: var(--seafoamGreen);
+  color: var(--white);
 }
 
 #requestServer:hover {
-  background-color: rgb(155, 189, 179);
+  background-color: var(--grey);
 }
 
 #requestServer {
@@ -58,14 +67,14 @@ header {
   text-decoration: none;
   overflow: hidden;
   cursor: pointer;
-  color: black;
+  color: var(--black);
   text-decoration: none;
-  text-shadow: 1px 1px 2px #46c496;
+  text-shadow: 1px 1px 2px var(--seafoamGreen);
 }
 
 #requestServer:after {
   content: "";
-  background: #90ee90;
+  background: var(--buttonFlash);
   display: block;
   position: absolute;
   padding-top: 300%;
@@ -84,9 +93,11 @@ header {
 }
 
 .buttonStyle:hover {
-  background-color: rgb(155, 189, 179);
+  background-color: var(--grey);
 }
 
+
+/*commmented out because of conflicts with bootstrap*/
 .tabcontent {
   /* float: left; */
   font-size: 25px;
@@ -95,6 +106,7 @@ header {
   height: 300px; */
 }
 
+/*commmented out because of conflicts with bootstrap*/
 .tab {
   /* float: left; */
   font-size: 18px;
@@ -107,7 +119,7 @@ header {
   font-size: 18px;
   text-align: center;
   border: 1px solid;
-  background-color: #46c496;
+  background-color: var(--seafoamGreen);
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   text-decoration: none;
@@ -117,7 +129,7 @@ header {
 
 .addToCart:after {
   content: "";
-  background: #90ee90;
+  background: var(--buttonFlash);
   display: block;
   position: absolute;
   padding-top: 300%;
@@ -140,9 +152,9 @@ header {
 }
 
 .linkStyle {
-  color: black;
+  color: var(--black);
   text-decoration: none;
-  text-shadow: 1px 1px 2px #46c496;
+  text-shadow: 1px 1px 2px var(--seafoamGreen);
 }
 
 li {
@@ -154,14 +166,16 @@ li {
 }
 
 .billCards {
-  background-color: #eee;
-  box-shadow: -10px -15px #46c496;
+  background-color: var(--paleWhite);
+  box-shadow: -10px -15px var(--seafoamGreen);
 }
 
 .card-body {
-  background-color: #eee;
+  background-color: var(--paleWhite);
 }
 
+
+/*future development option to has allergy alerts pop up underneath each menu item*/
 /* .has-nuts {
   font-family: 'Exo 2', sans-serif;
   font-weight: bolder;
